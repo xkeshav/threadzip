@@ -1,0 +1,50 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro  .",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.astro . --fix"
+  },
+  "author": {
+    "name": "Keshav Mohta",
+    "email": "xkeshav@gmail.com"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.0.8",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^4.0.7",
+    "forward-ref": "^1.0.0",
+    "json-server": "^0.17.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
+    "react-dom": "^18.2.0",
+    "swr": "^2.2.4"
+  },
+  "devDependencies": {
+    "@babel/eslint-plugin": "^7.23.5",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "astro-eslint-parser": "^0.11.0",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-astro": "^0.31.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2",
+    "sass": "^1.55.0",
+    "typescript": "^5.3.3"
+  }
+}
