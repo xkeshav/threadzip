@@ -4,7 +4,7 @@ const Navbar = () => {
       <div className="container px-1">
         <a
           className="navbar-brand font-weight-bolder ms-lg-0 "
-          href="https://www.creative-tim.com/astro"
+          href="https://www.threadzip.com/"
         >
           Threadzip Store
         </a>
