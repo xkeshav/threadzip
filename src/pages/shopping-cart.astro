@@ -2,13 +2,15 @@
 import "../../assets/scss/astro-ecommerce.scss";
 
 import data from "../../public/data.json";
-import ShoppingCart from "../components/cart/shoppingCart";
+import FreshShoppingCart from "../components/cart/shoppingCart";
 import Navbar from "../components/navbar";
 import CardProduct from "../components/products/cardProduct";
 import StoreDoubleColumn from "../components/store/storeDoubleColumn";
 import Layout from "../layouts/Layout.astro";
+import type { Product } from '../models/product';
 
-let cartItems = [];
+let cartItems:Product[] = [];
+
 data.shoppingCart.map((id) =>
 	data.products.filter((x) => x.id == id).map((x) => cartItems.push(x))
 );
@@ -18,7 +20,7 @@ data.shoppingCart.map((id) =>
 	<main>
 		<Navbar />
 
-		<ShoppingCart products={cartItems} />
+		<FreshShoppingCart products={cartItems} />
 
 		<div class="container mt-5">
 			<div class="row">
@@ -29,10 +31,12 @@ data.shoppingCart.map((id) =>
 							<CardProduct
 								thumb_src={product.thumb_src}
 								thumb_alt={product.thumb_alt}
-								color={product.color}
+								color={product.color as any}
 								title={product.title}
 								price={product.price}
 								position="left"
+                description={product.description}
+                colors={product.colors as any}
 							/>
 						</div>
 					))

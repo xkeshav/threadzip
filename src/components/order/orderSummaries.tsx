@@ -86,7 +86,7 @@ export default function OrderSummaries({ order, products }: Props) {
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
                 >
-                  <g clip-path='url(#clip0_152_7843)'>
+                  <g clipPath='url(#clip0_152_7843)'>
                     <path
                       d='M22.1996 20.8737H19.6074L21.2288 10.8484H23.8209L22.1996 20.8737Z'
                       fill='#00579F'

@@ -5,7 +5,7 @@ interface Props {
   title: string;
 }
 
-export default function ProductOverview({ title }: Props) {
+export default function ProductOverview({ title = "title"}: Props) {
   return (
     <>
       <div className="card card-product card-plain">

@@ -2,6 +2,7 @@
 import "../../assets/scss/astro-ecommerce.scss";
 
 import data from "../../public/data.json";
+import type { Product } from '../models/product';
 import ShoppingCart from "../components/cart/shoppingCart";
 import ShoppingCart2 from "../components/cart/shoppingCart2";
 import CheckoutMultiStep from "../components/checkout/checkoutMultiStep";
@@ -32,11 +33,11 @@ import Layout from "../layouts/Layout.astro";
 
 const firstProduct = data.products[0];
 
-let cartItems = [];
+let cartItems: Product[] = [];
 data.shoppingCart.map((id) =>
 	data.products.filter((x) => x.id == id).map((x) => cartItems.push(x))
 );
-let cartItems2 = [];
+let cartItems2: Product[] = [];
 data.shoppingCart2.map((id) =>
 	data.products.filter((x) => x.id == id).map((x) => cartItems2.push(x))
 );
@@ -44,7 +45,7 @@ data.shoppingCart2.map((id) =>
 // filter reviews with ID 01
 let productReviews = data.reviews.filter((x) => x.productID == "01");
 
-let orderProducts = [];
+let orderProducts: Product[] = [];
 
 data.orders[0].products.forEach((productDetails) => {
 	data.products.forEach((product) => {
@@ -204,13 +205,13 @@ data.orders.forEach((order) => {
 				<p class="mb-5">Product Overviews with image gallery and expandable details</p>
 
 				<ProductOverviewGallery
-					colors={data.products[1].colors}
-					images={data.products[1].images}
+					colors={data.products[1].colors!}
+					images={data.products[1].images!}
 					title={data.products[1].title}
-					full_description={data.products[1].full_description}
+					full_description={data.products[1].full_description!}
 					price={data.products[1].price}
-					rating={data.products[1].rating}
-					reviews={data.products[1].reviews}
+					rating={data.products[1].rating!}
+					reviews={data.products[1].reviews!}
 					data={data.products[1].data}
 				/>
 			</div>

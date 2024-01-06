@@ -15,21 +15,22 @@ interface Props {
   details: string;
   rating: number;
   reviews: number;
-  sizes: Map<string, number>;
+  sizes: any;
 }
 
-export default function ProductOverview({
-  title,
-  images,
-  colors,
-  full_description,
-  price,
-  highlights,
-  details,
-  rating,
-  reviews,
-  sizes,
-}: Props) {
+export default function ProductOverview(props: Props) {
+  const {
+    title,
+    images,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    full_description,
+    price,
+    highlights,
+    details,
+    rating,
+    reviews,
+    sizes,
+  }= props;
   return (
     <>
       <div className="card card-product card-plain">

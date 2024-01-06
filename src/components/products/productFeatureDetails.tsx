@@ -1,5 +1,5 @@
 interface Props {
-  featuresDetails: Map<string, string>;
+  featuresDetails:any;
 }
 
 export default function ProductAccordion({ featuresDetails }: Props) {

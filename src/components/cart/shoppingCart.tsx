@@ -1,24 +1,12 @@
-import OrderSummary from "./orderSummary"
-import ProductCartItem from "./productCartItem"
+import type { Product } from "../../models/product";
+import OrderSummary from "./orderSummary";
+import ProductCartItem from "./productCartItem";
 
-interface Props {
-  products: {
-    thumb_src: string
-    thumb_alt: string
-    color: string
-    title: string
-    price: number
-    size: string
-    stock: boolean
-    subtotal: number
-    shipping: number
-    tax: number
-  }[]
-}
+type ShoppingCartProps = { products:  Product[]}
 
-export default function ShoppingCart({ products }: Props) {
-  let subtotal = 0
-  products.map(product => (subtotal += product.price))
+export default function ShoppingCart(props: ShoppingCartProps) {
+  const {products = [] } = props;
+  let subtotal = products.length ? products.reduce((p, n) => p += n.price, 0) : 0;
 
   return (
     <>
@@ -29,7 +17,7 @@ export default function ShoppingCart({ products }: Props) {
         </h5>
         <div className='row'>
           <div className='col-12 col-lg-7'>
-            {products.map((product, i) => (
+            {products.length > 0 && products.map((product, i) => (
               <>
                 {i != 0 && <hr className='horizontal dark my-4' />}
                 <ProductCartItem
