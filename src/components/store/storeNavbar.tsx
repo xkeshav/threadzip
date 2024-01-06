@@ -36,7 +36,7 @@ export default function StoreNavbar() {
           <ul className="navbar-nav ms-md-auto  justify-content-end">
             <li className="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a
-                href="javascript:;"
+                href="javascript:void(0);"
                 className="nav-link p-0"
                 id="iconNavbarSidenav"
               >
@@ -48,17 +48,17 @@ export default function StoreNavbar() {
               </a>
             </li>
             <li className="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" className="nav-link p-0">
+              <a href="javascript:void(0);" className="nav-link p-0">
                 <h6 className="mb-0 text-sm">Search</h6>
               </a>
             </li>
             <li className="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" className="nav-link p-0">
+              <a href="javascript:void(0);" className="nav-link p-0">
                 <h6 className="mb-0 text-sm">Help</h6>
               </a>
             </li>
             <li className="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" className="nav-link p-0">
+              <a href="javascript:void(0);" className="nav-link p-0">
                 <i className="fas fa-cart-plus"></i>
               </a>
             </li>

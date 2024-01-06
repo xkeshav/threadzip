@@ -21,6 +21,7 @@ interface Props {
 export default function ProductOverview({
   title,
   images,
+  colors,
   full_description,
   price,
   highlights,

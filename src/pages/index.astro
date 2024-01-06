@@ -30,6 +30,8 @@ import ReviewSimple from "../components/reviews/reviewSimple";
 import ReviewSummaryChart from "../components/reviews/reviewSummaryChart";
 import Layout from "../layouts/Layout.astro";
 
+const firstProduct = data.products[0];
+
 let cartItems = [];
 data.shoppingCart.map((id) =>
 	data.products.filter((x) => x.id == id).map((x) => cartItems.push(x))
@@ -69,7 +71,7 @@ data.orders.forEach((order) => {
 	function toggleHeart(e: any) {
 		e.target.classList.toggle("fas"),
 			e.target.classList.toggle("far"),
-			e.target.classList.toggle("text-danger");
+			e.target.classList.toggle("text-danger")
 	}
 
 	document.getElementById("heart1")?.addEventListener("click", toggleHeart);
@@ -180,18 +182,18 @@ data.orders.forEach((order) => {
 				<p class="mb-5">With image grid</p>
 
 				{
-					data.products.length > 0 && (
+					firstProduct && (
 						<ProductOverviewGrid
-							colors={data.products[0].colors}
-							images={data.products[0].images}
-							title={data.products[0].title}
-							full_description={data.products[0].full_description}
-							price={data.products[0].price}
-							highlights={data.products[0].highlights}
-							details={data.products[0].details}
-							rating={data.products[0].rating}
-							reviews={data.products[0].reviews}
-							sizes={data.products[0].sizes}
+							colors={firstProduct.colors!}
+							images={firstProduct.images!}
+							title={firstProduct.title}
+							full_description={firstProduct.full_description!}
+							price={firstProduct.price}
+							highlights={firstProduct.highlights!}
+							details={firstProduct.details!}
+							rating={firstProduct.rating!}
+							reviews={firstProduct.reviews!}
+							sizes={firstProduct.sizes!}
 						/>
 					)
 				}

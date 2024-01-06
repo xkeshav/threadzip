@@ -24,27 +24,27 @@ export default function ProductOverview({ title }: Props) {
               </button>
               <ul className="dropdown-menu" aria-labelledby="sortButton">
                 <li>
-                  <a className="dropdown-item" href="javascript:;">
+                  <a className="dropdown-item" href="javascript:void(0);">
                     Most Popular
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="javascript:;">
+                  <a className="dropdown-item" href="javascript:void(0);">
                     Best Rating
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="javascript:;">
+                  <a className="dropdown-item" href="javascript:void(0);">
                     Newest
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="javascript:;">
+                  <a className="dropdown-item" href="javascript:void(0);">
                     Price: Low to High
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="javascript:;">
+                  <a className="dropdown-item" href="javascript:void(0);">
                     Price: High to Low
                   </a>
                 </li>
@@ -354,8 +354,8 @@ export default function ProductOverview({ title }: Props) {
           <div className="col-12 col-md-8">
             <div className="d-flex h-100">
               <div className="row">
-                {data.products.slice(0, 3).map((product) => (
-                  <div className="col-md-6 col-lg-4">
+                {data.products.slice(0, 3).map((product, i) => (
+                  <div className="col-md-6 col-lg-4" key={i}>
                     <CardProduct
                       thumb_src={product.thumb_src}
                       thumb_alt={product.thumb_alt}

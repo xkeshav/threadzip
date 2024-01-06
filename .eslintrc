@@ -49,14 +49,11 @@
     // Configuration for Astro
     {
       "files": ["*.astro"],
-      "plugins": [
-        "@typescript-eslint",
-        "astro"
-      ],
       "extends": [
         "airbnb-typescript",
         "plugin:prettier/recommended"
       ],
+      "plugins": ["astro"],
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser"

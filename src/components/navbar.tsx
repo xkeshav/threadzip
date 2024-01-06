@@ -6,7 +6,7 @@ const Navbar = () => {
           className="navbar-brand font-weight-bolder ms-lg-0 "
           href="https://www.creative-tim.com/astro"
         >
-          Astro Ecommerce
+          Threadzip Store
         </a>
         <button
           className="navbar-toggler shadow-none ms-2"
@@ -29,7 +29,7 @@ const Navbar = () => {
               <a
                 className="nav-link text-dark font-weight-bold d-flex align-items-center me-2 "
                 aria-current="page"
-                href="/astro-ecommerce/"
+                href="/"
               >
                 All Components
               </a>
@@ -46,19 +46,19 @@ const Navbar = () => {
               </a>
               <ul className="dropdown-menu" aria-labelledby="pagesExample">
                 <li>
-                  <a className="dropdown-item" href="/astro-ecommerce/landing/">
+                  <a className="dropdown-item" href="/landing/">
                     Landing Page
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/astro-ecommerce/product/">
+                  <a className="dropdown-item" href="/product/">
                     Product Page
                   </a>
                 </li>
                 <li>
                   <a
                     className="dropdown-item"
-                    href="/astro-ecommerce/shopping-cart/"
+                    href="/shopping-cart/"
                   >
                     Shopping Cart
                   </a>
@@ -69,7 +69,7 @@ const Navbar = () => {
               <a
                 className="nav-link text-dark font-weight-bold d-flex align-items-center me-2 "
                 aria-current="page"
-                href="https://www.creative-tim.com/learning-lab/astro/overview/astro-ecommerce"
+                href="/"
               >
                 Documentation
               </a>
@@ -78,20 +78,9 @@ const Navbar = () => {
               <a
                 className="nav-link text-dark font-weight-bold d-flex align-items-center me-2 "
                 aria-current="page"
-                href="https://github.com/creativetimofficial/astro-ecommerce"
+                href="/"
               >
                 <i className="fab text-lg fa-github"></i>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link text-dark font-weight-bold d-flex align-items-center me-2 "
-                aria-current="page"
-                href="https://discord.com/invite/TGZqBvZB"
-                rel="nofollow"
-                target="_blank"
-              >
-                <i className="fab text-lg fa-discord"></i>
               </a>
             </li>
           </ul>

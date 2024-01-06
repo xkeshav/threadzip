@@ -6,7 +6,7 @@ export default function UpperNavbar() {
           <ul className="navbar-nav">
             <li className="nav-item dropdown pe-2">
               <a
-                href="javascript:;"
+                href="javascript:void(0);"
                 className="nav-link dropdown-toggle text-white p-0"
                 id="dropdownCurrency"
                 data-bs-toggle="dropdown"
@@ -22,7 +22,7 @@ export default function UpperNavbar() {
                 <li className="mb-2">
                   <a
                     className="dropdown-item border-radius-md"
-                    href="javascript:;"
+                    href="javascript:void(0);"
                   >
                     <p className="mb-0">EUR</p>
                   </a>
@@ -30,7 +30,7 @@ export default function UpperNavbar() {
                 <li className="mb-2">
                   <a
                     className="dropdown-item border-radius-md"
-                    href="javascript:;"
+                    href="javascript:void(0);"
                   >
                     <p className="mb-0">USD</p>
                   </a>
@@ -38,7 +38,7 @@ export default function UpperNavbar() {
                 <li>
                   <a
                     className="dropdown-item border-radius-md"
-                    href="javascript:;"
+                    href="javascript:void(0);"
                   >
                     <p className="mb-0">RON</p>
                   </a>
