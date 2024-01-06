@@ -12,6 +12,5 @@
   "semi": true,
   "singleQuote": false,
   "trailingComma": "all",
-  "useTabs": false,
-  "parser": "babel"
+  "useTabs": false
 }

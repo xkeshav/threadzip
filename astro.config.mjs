@@ -8,4 +8,5 @@ export default defineConfig({
   integrations: [react()],
   site: "https://threadzip.com",
   base: ".",
+  trailingSlash: "ignore",
 });

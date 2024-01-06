@@ -1,4 +1,5 @@
 ---
+import "../../assets/scss/astro-ecommerce.scss";
 
 import data from "../../public/data.json";
 import Footer from "../components/footer";
@@ -18,6 +19,7 @@ import Layout from "../layouts/Layout.astro";
 			full_description={data.products[0].full_description || ''}
 			pageHeaderBgImg={"../images/bg2.jpg"}
 			pageHeaderMinVh="90vh"
+      pageHeaderRadius="1rem"
 		/>
 		<div class="container my-5">
 			<div class="d-block text-center mb-5">
@@ -40,7 +42,7 @@ import Layout from "../layouts/Layout.astro";
 
 			<PromoSectionLarge
 				title="Basic Starter Pack"
-				full_description={data.products[0].full_description}
+				full_description={data.products[0].full_description!}
 				pageHeaderBgImg={"../images/bg2.jpg"}
 				pageHeaderMinVh="50vh"
 				pageHeaderRadius="1rem"
@@ -48,9 +50,9 @@ import Layout from "../layouts/Layout.astro";
 			<div class="my-5">
 				<ProductFeature
 					title="Product Features"
-					images={data.products[2].images}
+					images={data.products[0].images!}
 					full_description="Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible"
-					featuresDetails={data.products[0].featuresDetails}
+					featuresDetails={data.products[0].featuresDetails!}
 				/>
 			</div>
 			<div class="mt-5 mb-10">

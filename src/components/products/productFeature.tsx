@@ -8,7 +8,7 @@ interface Props {
     alt: string;
   }[];
   full_description: string;
-  featuresDetails: Map<string, string>;
+  featuresDetails: {};
 }
 
 export default function ProductOverview({

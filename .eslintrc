@@ -59,7 +59,7 @@
         "parser": "@typescript-eslint/parser"
       },
       "rules": {
-        "prettier/prettier": "error",
+        "prettier/prettier": "off",
         "import/extensions": [
           "error",
           "ignorePackages",
