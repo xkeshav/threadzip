@@ -1,6 +1,10 @@
 {
   // Configuration for JavaScript files
-  "extends": ["plugin:prettier/recommended", "plugin:astro/recommended", "plugin:import/recommended"],
+  "extends": [
+  "plugin:prettier/recommended", 
+  "plugin:import/typescript",
+  "plugin:import/recommended",
+  "plugin:astro/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json",
@@ -78,6 +82,9 @@
             "ignore": ["@/*"]
           }
         ],
+        "import/resolver": {
+          "astro": { "ignore": ["*.astro"] }
+        },
         "react/jsx-filename-extension": [1, { "extensions": [".astro"] }], // Accept jsx in astro files
         "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
         "react/require-default-props": "off", // Allow non-defined react props as undefined

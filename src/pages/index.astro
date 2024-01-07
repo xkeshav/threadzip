@@ -1,4 +1,6 @@
 ---
+import { Debug } from "astro:components";
+
 import "../../assets/scss/astro-ecommerce.scss";
 
 import data from "../../public/data.json";
@@ -30,6 +32,11 @@ import TestimonialsFade from "../components/promo/testimonialsFade";
 import ReviewSimple from "../components/reviews/reviewSimple";
 import ReviewSummaryChart from "../components/reviews/reviewSummaryChart";
 import Layout from "../layouts/Layout.astro";
+
+const isProd = import.meta.env.PROD;
+const isDev = import.meta.env.DEV;
+	
+const modeCheck = {isDev, isProd};
 
 
 const firstProduct = data.products[0];
@@ -71,8 +78,7 @@ data.orders.forEach((order) => {
 
 <script>
 
-  const isProd = import.meta.env.PROD;
-  const isDev = import.meta.env.DEV;
+ 
 
 	function toggleHeart(e: any) {
 		e.target.classList.toggle("fas"),
@@ -81,7 +87,6 @@ data.orders.forEach((order) => {
 	}
 
 	document.getElementById("heart1")?.addEventListener("click", toggleHeart);
-  console.log({isProd,isDev})
 </script>
 
 <Layout title="Threadzip">
@@ -129,6 +134,7 @@ data.orders.forEach((order) => {
 					))
 				}
 			</div>
+  		<Debug {modeCheck} />
 
 			<div class="row mb-8">
 				<div class="d-block text-center mb-5">
