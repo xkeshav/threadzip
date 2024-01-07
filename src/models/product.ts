@@ -1,6 +1,6 @@
 
 
-export interface RootObject {
+export type RootObject = {
   products: Product[];
   categories: Category[];
   reviews: Review[];
@@ -9,7 +9,7 @@ export interface RootObject {
   shoppingCart2: string[];
 }
 
-export interface Order {
+export type Order = {
   orderNumber: number | string;
   products: Product2[];
   payment: Payment;
@@ -19,19 +19,19 @@ export interface Order {
   phoneNumber: string;
 }
 
-export interface Payment {
+export type Payment = {
   cardNumber: string;
   expiringDate: string;
 }
 
-export interface Product2 {
+export type Product2 = {
   id: string;
   status: string;
   quantity: number;
   dateModified: string;
 }
 
-export interface Review {
+export type Review = {
   avatar: string;
   name: string;
   date: string;
@@ -40,36 +40,51 @@ export interface Review {
   productID: string;
 }
 
-export interface Category {
+export type Category = {
   thumb_src: string;
   title: string;
   collection: string;
 }
 
-export interface Product {
+export type ProductOverView = {
+  title: string;
+  colors: string[];
+  images: Image[];
+  full_description: string;
+  price: number;
+  highlights: string[];
+  details: string;
+  rating: number;
+  reviews: number;
+  sizes: Sizes;
+}
+
+export type Product = ProductOverView & {
   id: string;
   thumb_src: string;
   thumb_alt: string;
-  images?: Image[];
   color: string;
-  colors?: string[];
-  title: string;
-  price: number;
   description: string;
-  full_description?: string;
-  details?: string;
-  highlights?: string[];
   features?: string[];
-  rating?: number;
   reviews?: number;
-  size: string;
-  sizes: Sizes;
   data?: Data;
   featuresDetails?: FeaturesDetails;
   stock: boolean;
+  size: string;
 }
 
-export interface FeaturesDetails {
+export type CartItemEntity = {
+  thumb_src: string;
+  thumb_alt: string;
+  title: string;
+  color: string;
+  size: string;
+  price: number;
+  stock: boolean;
+}
+
+
+export type FeaturesDetails = {
   Origin: string;
   Material: string;
   Dimensions: string;
@@ -78,7 +93,7 @@ export interface FeaturesDetails {
   Considerations?: string;
 }
 
-export interface Data {
+export type Data = {
   Features?: string;
   Care?: string;
   Shipping?: string;
@@ -89,7 +104,7 @@ export interface Data {
   Included?: string;
 }
 
-export interface Sizes {
+export type Sizes = {
   XS: number;
   S: number;
   M: number;
@@ -97,7 +112,7 @@ export interface Sizes {
   XL: number;
 }
 
-export interface Image {
+export type Image = {
   src: string;
   alt: string;
 }

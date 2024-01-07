@@ -1,24 +1,12 @@
-import OrderSummary from "./orderSummary"
-import ProductCartItem2 from "./productCartItem2"
+import type { Product } from "../../models/product";
+import OrderSummary from "./orderSummary";
+import ProductCartItem2 from "./productCartItem2";
 
-interface Props {
-  products: {
-    thumb_src: string
-    thumb_alt: string
-    color: string
-    title: string
-    price: number
-    size: string
-    stock: boolean
-    subtotal: number
-    shipping: number
-    tax: number
-  }[]
-}
+type ShoppingCartProps = { products:  Product[]}
 
-export default function ShoppingCart({ products }: Props) {
-  let subtotal = 0
-  products.map(product => (subtotal += product.price))
+export default function ShoppingCart(props: ShoppingCartProps) {
+  const {products = [] } = props;
+  let subtotal = products?.length ? products.reduce((p, n) => p += n.price, 0) : 0;
 
   return (
     <>
@@ -33,6 +21,7 @@ export default function ShoppingCart({ products }: Props) {
               <>
                 {i != 0 && <hr className='horizontal dark my-4' />}
                 <ProductCartItem2
+                  key={`prd_${i}`}
                   thumb_src={product.thumb_src}
                   thumb_alt={product.thumb_alt}
                   title={product.title}
@@ -47,7 +36,7 @@ export default function ShoppingCart({ products }: Props) {
           <div className='col-12 col-lg-7 col-md-8 mx-auto mt-4'>
             <div className='card shadow-xs border bg-gray-100'>
               <div className='card-body p-lg-5'>
-                <OrderSummary subtotal={subtotal} />
+                <OrderSummary textColor ={products[0].color} subtotal={subtotal} />
               </div>
             </div>
             <div className='d-block d-md-flex'>

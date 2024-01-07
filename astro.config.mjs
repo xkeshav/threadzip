@@ -11,4 +11,5 @@ export default defineConfig({
   site: "https://www.threadzip.com",
   base: isProd ? "/" : ".",
   trailingSlash: "ignore",
+  prefetch: true,
 });

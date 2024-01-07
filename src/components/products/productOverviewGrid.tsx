@@ -1,24 +1,10 @@
+import type { ProductOverView } from "../../models/product";
 import ProductRating from "../reviews/reviewRating";
 import ProductGallery from "./productGallery";
 import ProductSizes from "./productSizes";
 
-interface Props {
-  title: string;
-  colors: string[];
-  images: {
-    src: string;
-    alt: string;
-  }[];
-  full_description: string;
-  price: number;
-  highlights: string[];
-  details: string;
-  rating: number;
-  reviews: number;
-  sizes: any;
-}
 
-export default function ProductOverview(props: Props) {
+export default function ProductOverview(props: ProductOverView) {
   const {
     title,
     images,
@@ -30,14 +16,15 @@ export default function ProductOverview(props: Props) {
     rating,
     reviews,
     sizes,
-  }= props;
+    colors
+  } = props;
   return (
     <>
       <div className="card card-product card-plain">
         <div className="row">
           {images.length != 0 && <ProductGallery images={images} />}
           <div className="col-12 col-lg-6 ps-lg-5">
-            {title.length != 0 && <h2 className="mt-4">{title}</h2>}
+            {title?.length !== 0 && <h2 className="mt-4">{title}</h2>}
             {full_description.length != 0 && (
               <p className="mb-5">{full_description}</p>
             )}
@@ -60,7 +47,7 @@ export default function ProductOverview(props: Props) {
                 </>
               )}
 
-              {sizes.size != 0 && <ProductSizes sizes={sizes} />}
+              {sizes.S && <ProductSizes sizes={sizes} />}
               <button className="btn btn-dark btn-lg" type="submit">
                 Add to cart
               </button>

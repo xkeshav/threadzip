@@ -1,8 +1,10 @@
-interface Props {
-  sizes: Map<string, number>;
+import type { Sizes } from "../../models/product";
+
+type ProductSizesProps = {
+  sizes:Sizes
 }
 
-export default function ProductSizes({ sizes }: Props) {
+export default function ProductSizes({ sizes }: ProductSizesProps) {
   const sizeID = Date.now();
 
   return (

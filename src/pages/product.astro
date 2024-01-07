@@ -11,24 +11,25 @@ import Layout from "../layouts/Layout.astro";
 
 // filter reviews with ID 01
 let productReviews = data.reviews.filter((x) => x.productID == "01");
+
+let firstProduct = data.products.pop();
 ---
 
-<Layout title="Product Page">
+<Layout title="Product Page" client:only>
 	<main>
 		<Navbar />
 		<div class="container mt-5">
-			<ProductOverviewGrid
-				colors={data.products[0].colors}
-				images={data.products[0].images}
-				title={data.products[0].title}
-				full_description={data.products[0].full_description}
-				price={data.products[0].price}
-				highlights={data.products[0].highlights}
-				details={data.products[0].details}
-				rating={data.products[0].rating}
-				reviews={data.products[0].reviews}
-				sizes={data.products[0].sizes}
-			/>
+			{firstProduct && <ProductOverviewGrid
+				images={firstProduct.images}
+				title={firstProduct.title}
+				full_description={firstProduct.full_description}
+				price={firstProduct.price}
+				highlights={firstProduct.highlights}
+				details={firstProduct.details}
+				rating={firstProduct.rating}
+				reviews={firstProduct.reviews}
+				sizes={firstProduct.sizes}
+			/>}
 
 			<div class="my-5">
 				<ReviewSummaryChart reviews={productReviews} />

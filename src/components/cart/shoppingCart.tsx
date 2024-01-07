@@ -6,7 +6,7 @@ type ShoppingCartProps = { products:  Product[]}
 
 export default function ShoppingCart(props: ShoppingCartProps) {
   const {products = [] } = props;
-  let subtotal = products.length ? products.reduce((p, n) => p += n.price, 0) : 0;
+  let subtotal = products?.length ? products.reduce((p, n) => p += n.price, 0) : 0;
 
   return (
     <>

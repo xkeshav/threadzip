@@ -1,12 +1,6 @@
-interface Props {
-  thumb_src: string
-  thumb_alt: string
-  title: string
-  color: string
-  size: string
-  price: number
-  stock: boolean
-}
+
+
+import type { CartItemEntity } from "../../models/product";
 
 export default function CartItem({
   thumb_src,
@@ -16,7 +10,7 @@ export default function CartItem({
   size,
   price,
   stock,
-}: Props) {
+}: CartItemEntity) {
   return (
     <>
       <div className='d-block d-md-flex mt-4'>

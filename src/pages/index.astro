@@ -31,15 +31,16 @@ import ReviewSimple from "../components/reviews/reviewSimple";
 import ReviewSummaryChart from "../components/reviews/reviewSummaryChart";
 import Layout from "../layouts/Layout.astro";
 
+
 const firstProduct = data.products[0];
 
 let cartItems: Product[] = [];
 data.shoppingCart.map((id) =>
-	data.products.filter((x) => x.id == id).map((x) => cartItems.push(x))
+	data.products.filter((x) => x.id == id).map((x) => cartItems.push(x as Product))
 );
 let cartItems2: Product[] = [];
 data.shoppingCart2.map((id) =>
-	data.products.filter((x) => x.id == id).map((x) => cartItems2.push(x))
+	data.products.filter((x) => x.id == id).map((x) => cartItems2.push(x as Product))
 );
 
 // filter reviews with ID 01
@@ -69,6 +70,10 @@ data.orders.forEach((order) => {
 ---
 
 <script>
+
+  const isProd = import.meta.env.PROD;
+  const isDev = import.meta.env.DEV;
+
 	function toggleHeart(e: any) {
 		e.target.classList.toggle("fas"),
 			e.target.classList.toggle("far"),
@@ -76,6 +81,7 @@ data.orders.forEach((order) => {
 	}
 
 	document.getElementById("heart1")?.addEventListener("click", toggleHeart);
+  console.log({isProd,isDev})
 </script>
 
 <Layout title="Threadzip">
