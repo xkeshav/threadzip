@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 interface Props {
   data: Map<string, string>;
 }
@@ -9,6 +11,7 @@ export default function ProductAccordion({ data }: Props) {
   Object.entries(data).map(([title, value], i) => {
     if (i != 0) {
       accordion.push(
+        <Fragment key={i}>
         <div className="accordion-item">
           <h5 className="accordion-header" id={"heading" + i}>
             <button
@@ -40,10 +43,12 @@ export default function ProductAccordion({ data }: Props) {
               {value}
             </div>
           </div>
-        </div>,
+        </div>
+        </Fragment>
       );
     } else {
       accordion.push(
+        <Fragment key={i}>
         <div className="accordion-item">
           <h5 className="accordion-header" id={"heading" + i}>
             <button
@@ -75,7 +80,8 @@ export default function ProductAccordion({ data }: Props) {
               {value}
             </div>
           </div>
-        </div>,
+        </div>
+        </Fragment>
       );
     }
   });

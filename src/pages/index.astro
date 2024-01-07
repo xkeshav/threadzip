@@ -38,7 +38,6 @@ const isDev = import.meta.env.DEV;
 	
 const modeCheck = {isDev, isProd};
 
-
 const firstProduct = data.products[0];
 
 let cartItems: Product[] = [];
@@ -97,7 +96,8 @@ data.orders.forEach((order) => {
 			<p>Components and blocks for Product Lists</p>
 			<div class="row mt-5">
 				{
-					data.products.map((product) => (
+					data.products.map((product, i) => (
+            <Fragment  key={`card_prod_${i}`}>
 						<div class="col-md-6 col-lg-3">
 							<CardProduct
 								thumb_src={product.thumb_src}
@@ -110,6 +110,7 @@ data.orders.forEach((order) => {
 								position="center"
 							/>
 						</div>
+            </Fragment>
 					))
 				}
 			</div>
@@ -118,7 +119,8 @@ data.orders.forEach((order) => {
 			<p>Cards with full details</p>
 			<div class="row">
 				{
-					data.products.map((product) => (
+					data.products.map((product, i) => (
+          <Fragment  key={`card_prod_${i}`}>
 						<div class="col-md-6 col-lg-3">
 							<CardProduct
 								thumb_src={product.thumb_src}
@@ -131,6 +133,7 @@ data.orders.forEach((order) => {
 								position="left"
 							/>
 						</div>
+            </Fragment>
 					))
 				}
 			</div>
@@ -247,41 +250,42 @@ data.orders.forEach((order) => {
 				<p class="mb-5">With color selector, size selector, and details link</p>
 
 				<ProductQuickview
-					colors={data.products[0].colors}
+					colors={data.products[0].colors!}
 					thumb_src={data.products[0].thumb_src}
 					title={data.products[0].title}
 					price={data.products[0].price}
-					rating={data.products[0].rating}
-					reviews={data.products[0].reviews}
+					rating={data.products[0].rating!}
+					reviews={data.products[0].reviews!}
 					sizes={data.products[0].sizes}
-					images={data.products[0].images}
+					images={data.products[0].images!}
 				/>
 
 				<h3 class="mt-7">Product Quickviewers</h3>
 				<p class="mb-5">With large size selector</p>
 				<ProductQuickview2
-					colors={data.products[1].colors}
+					colors={data.products[1].colors!}
 					thumb_src="/images/mirror.png"
 					title="Sofa"
-					price={data.products[1].price}
-					rating={data.products[1].rating}
-					reviews={data.products[1].reviews}
+					price={data.products[1].price!}
+					rating={data.products[1].rating!}
+					reviews={data.products[1].reviews!}
+          stock={data.products[1].stock}
 				/>
 			</div>
 
 			<div class="my-10">
 				<ProductFeature
 					title={data.products[0].title}
-					images={data.products[2].images}
-					full_description={data.products[0].full_description}
-					featuresDetails={data.products[0].featuresDetails}
+					images={data.products[0].images!}
+					full_description={data.products[0].full_description!}
+					featuresDetails={data.products[0].featuresDetails!}
 				/>
 			</div>
 
 			<div class="my-10">
 				<ProductFeature2
 					title={data.products[0].title}
-					full_description={data.products[0].full_description}
+					full_description={data.products[0].full_description!}
 					images={data.products[2].images}
 					data={data.products[2].data}
 				/>
@@ -294,15 +298,21 @@ data.orders.forEach((order) => {
 				<ComplexNavbar />
 				<div class="row mt-4">
 					{
-						data.products.map((product) => (
+						data.products.map((product, i) => (
+            <Fragment  key={`card_prod_${i}`}>
 							<div class="col-12 col-md-6 col-lg-3">
 								<CardProduct
 									thumb_src={product.thumb_src}
 									thumb_alt={product.thumb_alt}
 									title={product.title}
 									price={product.price}
+                  description={product.description}
+                  color={product.color}
+                  colors={product.colors as any}
+                  position='center'
 								/>
 							</div>
+              </Fragment>
 						))
 					}
 				</div>
@@ -313,15 +323,21 @@ data.orders.forEach((order) => {
 				<ComplexNavbarDark />
 				<div class="row mt-4">
 					{
-						data.products.map((product) => (
+						data.products.map((product, i) => (
+            <Fragment  key={`card_prod_${i}`}>
 							<div class="col-12 col-md-6 col-lg-3">
 								<CardProduct
 									thumb_src={product.thumb_src}
 									thumb_alt={product.thumb_alt}
 									title={product.title}
 									price={product.price}
+                  description={product.description}
+                  color={product.color}
+                  colors={product.colors as any}
+                  position='center'
 								/>
 							</div>
+              </Fragment> 
 						))
 					}
 				</div>

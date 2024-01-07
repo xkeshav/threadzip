@@ -1,5 +1,3 @@
-
-
 export type RootObject = {
   products: Product[];
   categories: Category[];

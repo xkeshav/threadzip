@@ -1,3 +1,4 @@
+import type { Sizes } from '../../models/product';
 import ProductBadge from "./productBadge";
 import ProductGallery from "./productGallery";
 import ProductRating from "./productRating";
@@ -10,7 +11,7 @@ interface Props {
   colors: string[];
   rating: number;
   reviews: number;
-  sizes: Map<string, number>;
+  sizes: Sizes;
   images: {
     src: string;
     alt: string;

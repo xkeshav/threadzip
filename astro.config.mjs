@@ -10,6 +10,6 @@ export default defineConfig({
   integrations: [react()],
   site: "https://www.threadzip.com",
   base: isProd ? "/" : ".",
-  trailingSlash: "ignore",
+  trailingSlash: isProd ? "never" : "always",
   prefetch: true,
 });

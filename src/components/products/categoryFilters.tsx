@@ -10,7 +10,7 @@ export default function ProductOverview({ title = "title"}: Props) {
     <>
       <div className="card card-product card-plain">
         <div className="d-flex border-bottom pb-3">
-          {title.length != 0 && <h2 className="mb-3">{title}</h2>}
+          {title.length !== 0 && <h2 className="mb-3">{title}</h2>}
           <div className="d-flex ms-auto align-items-center">
             <div className="dropdown">
               <button
@@ -355,7 +355,7 @@ export default function ProductOverview({ title = "title"}: Props) {
             <div className="d-flex h-100">
               <div className="row">
                 {data.products.slice(0, 3).map((product, i) => (
-                  <div className="col-md-6 col-lg-4" key={i}>
+                  <div className="col-md-6 col-lg-4" key={`card_${i}`}>
                     <CardProduct
                       thumb_src={product.thumb_src}
                       thumb_alt={product.thumb_alt}
