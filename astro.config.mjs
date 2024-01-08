@@ -9,7 +9,7 @@ const isProd = import.meta.env.PROD;
 export default defineConfig({
   integrations: [react()],
   site: "https://www.threadzip.com",
-  base: isProd ? "/" : ".",
-  trailingSlash: isProd ? "always" : "ignore",
+  base: ".",
+  trailingSlash: "ignore",
   prefetch: true,
 });
