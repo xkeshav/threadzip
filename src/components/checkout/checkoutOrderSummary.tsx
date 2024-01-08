@@ -40,13 +40,13 @@ export default function CheckoutSummary({ products }: Props) {
             </div>
 
             <h5 className='mt-5 mb-4'>Shipping address</h5>
-            <ShippingInfo />
+            <ShippingInfo title={'shipping from order summary'}/>
 
             <h5 className='mt-5 mb-4'>Payment details</h5>
             <PaymentDetails />
 
             <h5 className='mt-5 mb-4'>Billing information</h5>
-            <BillingInfo />
+            <BillingInfo title={'billiing from order summary'}/>
 
             <hr className='dark horizontal' />
             <button className='btn btn-dark float-end mt-2 mb-0'>

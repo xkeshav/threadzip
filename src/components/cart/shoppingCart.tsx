@@ -18,9 +18,9 @@ export default function ShoppingCart(props: ShoppingCartProps) {
         <div className='row'>
           <div className='col-12 col-lg-7'>
             {products.length > 0 && products.map((product, i) => (
-              <>
-                {i != 0 && <hr className='horizontal dark my-4' />}
+                //{i != 0 && <hr key={`hr_${i}`} className='horizontal dark my-4' />}
                 <ProductCartItem
+                  key={`pcr_${i}`}
                   thumb_src={product.thumb_src}
                   thumb_alt={product.thumb_alt}
                   title={product.title}
@@ -29,7 +29,6 @@ export default function ShoppingCart(props: ShoppingCartProps) {
                   price={product.price}
                   stock={product.stock}
                 />
-              </>
             ))}
           </div>
           <div className='col-12 col-lg-5 mt-5 mt-lg-0'>

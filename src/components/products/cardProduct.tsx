@@ -27,7 +27,7 @@ export default function CardProduct({
     <>
       <div className="card card-product border mb-5 shadow-xs border-radius-lg">
         <a href="#">
-          <div className="height-350">
+          <div className="h-15">
             <img
               className="w-100 h-100 p-4 rounded-top"
               src={`${import.meta.env.BASE_URL}${thumb_src}`}
@@ -37,17 +37,13 @@ export default function CardProduct({
           <div className={classList}>
             {color && <h6 className="text-md mb-1 text-body">{color}</h6>}
             {title && <h4 className="font-weight-bold">{title}</h4>}
-
-            {description && <p className="text-body">{description}</p>}
-
+            {description && <p className="text-body ch-8">{description}</p>}
             {colors && <ProductBadge colors={colors} />}
-
             {price && (
               <h4 className="mb-0 text-lg mt-1 mb-3">
                 ${price.toLocaleString()}
               </h4>
             )}
-
             {!(description || colors || color) && (
               <a href="#" className="font-weight-normal text-body text-sm">
                 Shop Now

@@ -37,7 +37,7 @@ export default function ProductOverview(props: ProductOverView) {
                 <input className="opacity-0" defaultValue={price} />
               </div>
 
-              {rating != 0 && (
+              {rating !== 0 && (
                 <>
                   <h3 className="sr-only">Reviews</h3>
                   <div className="d-flex">
@@ -65,17 +65,17 @@ export default function ProductOverview(props: ProductOverView) {
               I do. That’s what I’m here for. Don’t be afraid to be wrong
               because you can’t learn anything from a compliment.
             </p>
-            {highlights.length != 0 && (
+            {highlights.length !== 0 && (
               <>
                 <h6>Benefits</h6>
                 <ul className="text-sm">
-                  {highlights.map((highlight) => (
-                    <li className="mb-2">{highlight}</li>
+                  {highlights.map((highlight, i) => (
+                    <li key={`po_${i}`} className="mb-2">{highlight}</li>
                   ))}
                 </ul>
               </>
             )}
-            {details.length != 0 && (
+            {details.length !== 0 && (
               <>
                 <h6>More about product</h6>
                 <p>{details}</p>

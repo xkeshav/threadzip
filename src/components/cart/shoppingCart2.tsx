@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import type { Product } from "../../models/product";
 import OrderSummary from "./orderSummary";
 import ProductCartItem2 from "./productCartItem2";
@@ -18,7 +19,7 @@ export default function ShoppingCart(props: ShoppingCartProps) {
         <div className='row'>
           <div className='col-12'>
             {products.map((product, i) => (
-              <>
+              <Fragment key={`sc2_${i}`}>
                 {i != 0 && <hr className='horizontal dark my-4' />}
                 <ProductCartItem2
                   key={`prd_${i}`}
@@ -30,7 +31,7 @@ export default function ShoppingCart(props: ShoppingCartProps) {
                   price={product.price}
                   stock={product.stock}
                 />
-              </>
+              </Fragment>
             ))}
           </div>
           <div className='col-12 col-lg-7 col-md-8 mx-auto mt-4'>

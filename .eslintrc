@@ -83,7 +83,9 @@
           }
         ],
         "import/resolver": {
-          "astro": { "ignore": ["*.astro"] }
+          "node": true,
+          "typescript": true,
+          "astro": true
         },
         "react/jsx-filename-extension": [1, { "extensions": [".astro"] }], // Accept jsx in astro files
         "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable

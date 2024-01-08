@@ -34,8 +34,8 @@ export default function productOverviewGallery({
         <div className="row">
           {images.length != 0 && <ProductImages images={images} />}
           <div className="col-12 col-lg-6 mt-5 mt-lg-0">
-            {title.length != 0 && <h2>{title}</h2>}
-            {price.length != 0 && (
+            {title.length !== 0 && <h2>{title}</h2>}
+            {price !== 0 && (
               <>
                 <div className="d-flex mb-3">
                   <h4 className="font-weight-normal">
@@ -47,14 +47,14 @@ export default function productOverviewGallery({
             )}
             <p className="mt-4">{full_description}</p>
 
-            {rating != 0 && (
+            {rating !== 0 && (
               <div className="d-flex align-items-center">
-                <ProductRating rating={rating} reviews={reviews} />
+                <ProductRating rating={rating}  />
                 <span className="ms-2">100 reviews</span>
               </div>
             )}
 
-            {colors.length != 0 && (
+            {colors.length !== 0 && (
               <>
                 <h6 className="mt-4">Color:</h6>
                 {colors && <ProductBadge colors={colors} />}

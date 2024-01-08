@@ -30,6 +30,8 @@
       ],
       "title": "Basic Starter Pack",
       "price": 399,
+      "rating": 4,
+      "reviews": 117,
       "description": "That’s the main thing people are controlled by! Thoughts- their perception of themselves!",
       "full_description": "The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out.",
       "details": "There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn.",
@@ -44,8 +46,6 @@
         "Stainless strap loops",
         "Ultra-soft 100% cotton"
       ],
-      "rating": 4,
-      "reviews": 117,
       "size": "Small",
       "sizes": {
         "XS": 3,
@@ -97,6 +97,8 @@
       "reviews": 117,
       "description": "That’s the main thing people are controlled by! Thoughts- their perception of themselves!",
       "full_description": "The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming `Charcoal Gray` limited release.",
+      "details": "Product 2 details",
+      "highlights": ["second highlights"],
       "features": [
         "Multiple strap configuration",
         "Water Resistant",
@@ -152,8 +154,16 @@
       "color": "Yellow",
       "colors": ["SpaceGray"],
       "title": "Premium Suit",
-      "description": "There’s nothing I really wanted to do in life that I wasn’t able to get good at.",
       "price": 1399,
+      "rating": 3,
+      "reviews": 20,
+      "description": "There’s nothing I really wanted to do in life that I wasn’t able to get good at.",
+      "full_description": "lorem ",
+      "details": "Product 3 details",
+      "highlights": ["third highlights"],
+      "features": [
+        "100% original"
+      ],
       "size": "Large",
       "sizes": {
         "XS": 3,
@@ -168,16 +178,51 @@
         "Considerations": "I always felt like I could do anything. That’s the main thing people are controlled by! Thoughts- their perception of themselves! They're slowed down by their perception of themselves. If you're taught you can’t do anything, you won’t do anything. I was taught I could do everything.",
         "Included": "We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed."
       },
+      "featuresDetails": {
+        "Origin": "Designed by Good Goods, Inc.",
+        "Material": "Solid walnut base with rare earth magnets and powder coated steel card cover",
+        "Dimensions": "16.25 x 23.55' x 21.15'",
+        "Finish": "Hand sanded and finished with natural oil",
+        "Includes": "Wood card tray and 3 refill packs",
+        "Considerations": "Made from natural materials. Grain and color vary with each item."
+      },
       "stock": true
     },
     {
       "id": "04",
       "thumb_src": "/images/suit-5.jpg",
       "thumb_alt": "iPhone_thumb",
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1567790350645-dbc1486a89c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+          "alt": "first_image"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1593088177922-aa1c5055c7b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+          "alt": "second_image"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1635594202056-9ea3b497e5c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+          "alt": "third_image"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1593085260707-5377ba37f868?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+          "alt": "fourth_image"
+        }
+      ],
       "color": "Blue",
+      "colors": ["blue", "pink"],
       "title": "iPhone",
-      "description": "That’s the main thing people are controlled by! Thoughts- their perception of themselves!",
       "price": 1599,
+      "rating": 3,
+      "reviews": 80,
+      "description": "That’s the main thing people are controlled by! Thoughts- their perception of themselves!",
+      "full_description": " full describe here",
+      "details": "Product 4 details",
+      "highlights": ["fourth highlights"],
+      "features": [
+        "100% original"
+      ],
       "size": "Small",
       "sizes": {
         "XS": 3,
@@ -185,6 +230,12 @@
         "M": 1,
         "L": 0,
         "XL": 6
+      },
+      "data": {
+        "Design": "new design"
+      },
+      "featuresDetails": {
+        "Origin": "Designed by hands"
       },
       "stock": false
     }

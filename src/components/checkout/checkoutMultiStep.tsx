@@ -56,7 +56,7 @@ export default function CheckoutSummary({ products }: Props) {
 
             <PaymentDetails />
 
-            <ShippingInfo />
+            <ShippingInfo  title='shipping'/>
 
             <button className='btn btn-dark w-100 mt-4'>Continue</button>
           </div>
@@ -73,7 +73,7 @@ export default function CheckoutSummary({ products }: Props) {
                 price={product.price}
               />
             ))}
-            <OrderSummary subtotal={subtotalCheckout} />
+            <OrderSummary subtotal={subtotalCheckout} textColor='red'/>
           </div>
         </div>
       </section>

@@ -28,19 +28,20 @@ interface Props {
 }
 
 export default function OrderHistoryCard({ products, order }: Props) {
-  let orderHistoryCards = []
+  let orderHistoryCards: any = []
 
   order.products.map(productDetails => {
     let productStatus = ""
     let dateModified = ""
 
-    products.map(product => {
+    products.map((product, i) => {
       if (productDetails.id == product.id) {
         productStatus = productDetails.status
         dateModified = productDetails.dateModified
 
         orderHistoryCards.push(
           <OrderProductRow
+            key={`opr_${1}`}
             product={product}
             status={productStatus}
             dateModified={dateModified}

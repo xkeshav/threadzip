@@ -5,11 +5,11 @@ interface Props {
 }
 
 export default function ProductAccordion({ data }: Props) {
-  const accordion = [];
+  const accordion:any = [];
   //let i = 0;
 
   Object.entries(data).map(([title, value], i) => {
-    if (i != 0) {
+    if (i !== 0) {
       accordion.push(
         <Fragment key={i}>
         <div className="accordion-item">

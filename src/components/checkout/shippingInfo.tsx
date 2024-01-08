@@ -2,7 +2,8 @@ interface Props {
   title: string
 }
 
-export default function OrderSummary({}: Props) {
+export default function OrderSummary({title}: Props) {
+  console.log({title});
   return (
     <>
       <div className='form-group'>

@@ -24,27 +24,27 @@ export default function ProductOverview({ title = "title"}: Props) {
               </button>
               <ul className="dropdown-menu" aria-labelledby="sortButton">
                 <li>
-                  <a className="dropdown-item" href="javascript:void(0);">
+                  <a className="dropdown-item" href="#">
                     Most Popular
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="javascript:void(0);">
+                  <a className="dropdown-item" href="#">
                     Best Rating
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="javascript:void(0);">
+                  <a className="dropdown-item" href="#">
                     Newest
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="javascript:void(0);">
+                  <a className="dropdown-item" href="#">
                     Price: Low to High
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="javascript:void(0);">
+                  <a className="dropdown-item" href="#">
                     Price: High to Low
                   </a>
                 </li>

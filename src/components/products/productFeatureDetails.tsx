@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 interface Props {
   featuresDetails:any;
 }
@@ -5,8 +7,9 @@ interface Props {
 export default function ProductAccordion({ featuresDetails }: Props) {
   const prodFeatures: any = [];
 
-  Object.entries(featuresDetails).map(([_title, value]) => {
+  Object.entries(featuresDetails).map(([_title, value], i) => {
     prodFeatures.push(
+      <Fragment key={`fd_${i}`}>
       <div className="col-12">
         <div className="d-flex mb-4">
           <svg
@@ -26,7 +29,8 @@ export default function ProductAccordion({ featuresDetails }: Props) {
           </svg>
           <p>{value}</p>
         </div>
-      </div>,
+      </div>
+      </Fragment>
     );
   });
 
