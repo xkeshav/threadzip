@@ -1,0 +1,21 @@
+{
+  "name": "Threadzip: A B2B marketplace",
+  "short_name": "threadzip",
+  "description": "a virtual storefront for raw textile material market",
+  "icons": [
+    {
+      "src": "/logo/small-logo-white.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1d1f21",
+  "theme_color": "#2bbc8a",
+  "display": "standalone"
+}

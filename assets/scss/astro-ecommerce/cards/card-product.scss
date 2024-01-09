@@ -4,20 +4,25 @@
       object-fit: cover;
     }
   }
-  
+
   & a {
-    .h-15 {
-      height: 15rem;
+    .height__adjust {
+      height: 25rem;
+    }
+    @media (min-width: 700px) {
+      .height__adjust {
+        height: 15rem;
+      }
     }
   }
-  
+
   .ch-8 {
     height: 8rem;
   }
 
   .badge {
     border: 1px solid $light;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     cursor: pointer;
     display: inline-block;
     height: 23px;
@@ -25,7 +30,7 @@
     position: relative;
     width: 23px;
     transition: $transition-base;
-    
+
     &:hover,
     &.active {
       border-color: $dark;

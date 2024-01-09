@@ -93,7 +93,7 @@ const ComplexNavbarDark = () => {
                     <div className="py-1 d-flex">
                       <div className="my-auto">
                         <img
-                          src={`${import.meta.env.BASE_URL}images/team-2.jpg`}
+                          src={`${import.meta.env.BASE_URL}/images/team-2.jpg`}
                           className="avatar avatar-sm  me-3 "
                           alt="user image"
                         />
@@ -117,15 +117,6 @@ const ComplexNavbarDark = () => {
                 <li className="mb-2">
                   <a className="dropdown-item border-radius-md" href="#">
                     <div className="py-1 d-flex">
-                      <div className="my-auto">
-                        <img
-                          src={`${
-                            import.meta.env.BASE_URL
-                          }logo/logo-spotify.svg`}
-                          className="avatar avatar-sm bg-gradient-dark  me-3 "
-                          alt="logo spotify"
-                        />
-                      </div>
                       <div className="d-flex flex-column justify-content-center">
                         <h6 className="mb-1 text-sm font-weight-normal">
                           <span className="font-weight-bold">New album</span> by
@@ -209,7 +200,7 @@ const ComplexNavbarDark = () => {
               <a href="#" className="px-0 text-white nav-link font-weight-bold">
                 <div className="avatar avatar-sm position-relative">
                   <img
-                    src={`${import.meta.env.BASE_URL}images/team-1.jpg`}
+                    src={`${import.meta.env.BASE_URL}/images/team-1.jpg`}
                     alt="profile_image"
                     className="w-100 border-radius-md"
                   />
