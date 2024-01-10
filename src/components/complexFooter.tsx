@@ -1,4 +1,3 @@
-import data from "../../public/data.json";
 import StoreDoubleColumn from "../components/store/storeDoubleColumn";
 
 export default function ComplexFooter() {
@@ -15,7 +14,7 @@ export default function ComplexFooter() {
             </p>
           </div>
           <div className="col-12 col-md-8">
-            <StoreDoubleColumn title={data.products[1].title} />
+            <StoreDoubleColumn  />
           </div>
           <div className="col-12 mt-5 mb-lg-0 mb-4">
             <div className="copyright text-center text-sm text-body">

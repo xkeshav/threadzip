@@ -1,0 +1,51 @@
+---
+
+import "../../assets/scss/astro-ecommerce.scss";
+import data from "../../public/data.json";
+import Navbar from '../components/navbar';
+import CardCategory from '../components/products/cardCategory';
+import Layout from '../layouts/Layout.astro';
+
+---
+<Layout title="Category Page">
+  <main>
+		<Navbar />
+    <div class="container mt-5">
+      <div class="row mb-5">
+        <div class="d-block text-center mb-5">
+          <h3>Shop by category</h3>
+          <a class="text-dark font-weight-bold" href="#">Browse all categories &#62;</a>
+        </div>
+        <div class="col-md-6">
+          <CardCategory
+            classList="h-100"
+            cta=""
+            thumb_src={data.categories[4].thumb_src}
+            title={data.categories[4].title}
+            collection=""
+          />
+        </div>
+        <div class="col-md-6">
+          <div class="mb-4">
+            <CardCategory
+              classList=""
+              cta=""
+              thumb_src={data.categories[5].thumb_src}
+              title={data.categories[5].title}
+              collection=""
+            />
+          </div>
+          <div class="">
+            <CardCategory
+              classList=""
+              cta=""
+              thumb_src={data.categories[6].thumb_src}
+              title={data.categories[6].title}
+              collection=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -31,7 +31,7 @@ const Navbar = () => {
                 aria-current="page"
                 href="/"
               >
-                All Components
+                All Products
               </a>
             </li>
             <li className="nav-item dropdown">
@@ -72,15 +72,6 @@ const Navbar = () => {
                 href="/"
               >
                 Documentation
-              </a>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link text-dark font-weight-bold d-flex align-items-center me-2 "
-                aria-current="page"
-                href="/"
-              >
-                <i className="fab text-lg fa-github"></i>
               </a>
             </li>
           </ul>

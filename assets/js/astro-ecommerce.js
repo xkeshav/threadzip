@@ -41,6 +41,8 @@
   }
 })();
 
+
+
 // Verify navbar blur on scroll
 navbarBlurOnScroll("navbarBlur");
 

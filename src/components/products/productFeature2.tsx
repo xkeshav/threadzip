@@ -1,10 +1,13 @@
+import type { FeatureData, Image } from '../../models/product';
+
 interface Props {
   title: string;
+  images: Image[];
   full_description: string;
-  data: Map<string, string>;
+  data: FeatureData;
 }
 
-export default function ProductOverview({ title, full_description }: Props) {
+export default function ProductOverview({ title, full_description, data }: Props) {
   return (
     <>
       <div className="card card-product card-plain">

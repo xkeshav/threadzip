@@ -1,0 +1,22 @@
+---
+
+import "../../assets/scss/astro-ecommerce.scss";
+import data from "../../public/data.json";
+import Navbar from '../components/navbar';
+import ProductFeature2 from '../components/products/productFeature2';
+import Layout from '../layouts/Layout.astro';
+
+---
+<Layout title="Category Page">
+  <main>
+		<Navbar />
+      <div class="container mt-5">
+        <ProductFeature2
+        title={data.products[2].title}
+        full_description={data.products[2].full_description!}
+        images={data.products[2].images}
+        data={data.products[2].data}
+        />
+      </div>
+  </main>
+</Layout>

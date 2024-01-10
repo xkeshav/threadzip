@@ -9,7 +9,7 @@ interface Props {
     date: string;
     rating: number;
     comment: string;
-    productID: number;
+    productID: string;
   }[];
 }
 

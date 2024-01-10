@@ -13,8 +13,7 @@ export default function CardProduct({
   classList,
   cta,
 }: Props) {
-  const classBody =
-    cta != null ? "align-items-end d-flex" : "text-center w-100 pt-8";
+  const classBody = cta !== null ? "align-items-end d-flex" : "text-center w-100 pt-8";
 
   return (
     <>
@@ -25,9 +24,7 @@ export default function CardProduct({
           <div
             className="full-background"
             style={{
-              backgroundImage: `url(${`${
-                import.meta.env.BASE_URL
-              }${thumb_src}`})`,
+              backgroundImage: `url(${`${import.meta.env.BASE_URL}${thumb_src}`})`,
               backgroundSize: "cover",
             }}
           ></div>

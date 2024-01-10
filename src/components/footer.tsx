@@ -7,7 +7,6 @@ export default function Footer() {
             <div className="copyright text-center text-sm text-muted text-lg-start">
               Copyright ©{" "}
               <script>document.write(new Date().getFullYear())</script>
-              &nbsp;Astro E-commerce by
               <a
                 href="https://www.xkeshav.com"
                 className="text-dark ms-1"

@@ -8,7 +8,7 @@ const ComplexNavbarDark = () => {
         <nav aria-label="breadcrumb">
           <div className="d-flex align-items-center">
             <span className="px-3 text-lg text-white font-weight-bold me-4">
-             Threadzip Store
+            Threadzip Store
             </span>
           </div>
         </nav>

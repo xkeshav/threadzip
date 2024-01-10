@@ -1,27 +1,27 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"eslint.validate": [
-		"javascript",
-    "javascriptreact",
-    "astro", // Enable .astro
-    "typescript", // Enable .ts
-    "typescriptreact"
-		],
-		"prettier.documentSelectors": ["**/*.astro"],
-		"[astro]": {
-			"editor.defaultFormatter": "esbenp.prettier-vscode"
-		},
-		"editor.codeActionsOnSave": {
-			"source.fixAll": "explicit"
-		},
-		"editor.formatOnSave": false,
-		"editor.inlayHints.enabled": "offUnlessPressed",
-		"prettier.printWidth": 120,
-		"svg.preview.background": "black",
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "astro", // Enable .astro
+      "typescript", // Enable .ts
+      "typescriptreact"
+    ],
+    "prettier.documentSelectors": ["**/*.astro"],
+    "[astro]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    },
+    "editor.formatOnSave": false,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "prettier.printWidth": 120,
+    "svg.preview.background": "black"
+  }
 }

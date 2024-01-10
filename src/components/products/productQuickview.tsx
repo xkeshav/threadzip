@@ -88,7 +88,7 @@ export default function ProductQuickview({
                       {colors && <ProductBadge colors={colors} />}
                     </>
                   )}
-                  {sizes.size != 0 && <ProductSizes sizes={sizes} />}
+                  {sizes && <ProductSizes sizes={sizes} />}
                   <div className="d-block text-center">
                     <button className="btn btn-dark w-100">Checkout</button>
                     <button className="btn btn-white w-100">

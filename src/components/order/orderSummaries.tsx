@@ -29,7 +29,7 @@ interface Props {
 }
 
 export default function OrderSummaries({ order, products }: Props) {
-  let orderCards = []
+  let orderCards: any = []
 
   products.map(product => {
     let status = ""
@@ -53,7 +53,7 @@ export default function OrderSummaries({ order, products }: Props) {
     )
   })
 
-  let subtotal = 0
+  let subtotal = 0;
   products.map(product => (subtotal += product.price))
 
   return (
@@ -68,7 +68,6 @@ export default function OrderSummaries({ order, products }: Props) {
           </div>
           <button className='btn btn-dark btn-sm'>View invoice</button>
         </div>
-
         {orderCards}
         <div className='card shadow-xs border p-3 p-md-4 mb-4'>
           <div className='row'>

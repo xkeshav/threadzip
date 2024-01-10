@@ -26,7 +26,7 @@ export default function CardProduct({
   return (
     <>
       <div className="card card-product border mb-5 shadow-xs border-radius-lg">
-        <a href="#">
+        <a href="/product-detail">
           <div className="height__adjust">
             <img
               className="w-100 h-100 p-4 rounded-top"

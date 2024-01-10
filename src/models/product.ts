@@ -65,7 +65,7 @@ export type Product = ProductOverView & {
   description: string;
   features?: string[];
   reviews?: number;
-  data?: Data;
+  data?: FeatureData;
   featuresDetails?: FeaturesDetails;
   stock: boolean;
   size: string;
@@ -91,7 +91,7 @@ export type FeaturesDetails = {
   Considerations?: string;
 }
 
-export type Data = {
+export type FeatureData = {
   Features?: string;
   Care?: string;
   Shipping?: string;

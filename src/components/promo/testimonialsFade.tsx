@@ -73,7 +73,7 @@ export default function TestimonialsFade({
             <div className="col-12 col-md-6 col-lg-4">
               <div className="card border shadow-xs mb-4">
                 <div className="card-body text-start p-3 w-100">
-                  <Reviews rating="4" />
+                  <Reviews rating={4} />
                   <p className="mt-4">
                     We’re not always in the position that we want to be at.
                     We’re constantly growing. We’re constantly making mistakes.
@@ -96,7 +96,7 @@ export default function TestimonialsFade({
             <div className="col-12 col-md-6 col-lg-4">
               <div className="card border shadow-xs mb-4">
                 <div className="card-body text-start p-3 w-100">
-                  <Reviews rating="5" />
+                  <Reviews rating={5} />
                   <p className="mt-4">
                     There’s nothing I really wanted to do in life that I wasn’t
                     able to get good at. That’s my skill. I’m not really
@@ -120,7 +120,7 @@ export default function TestimonialsFade({
             <div className="col-12 col-md-12 col-lg-4">
               <div className="card border shadow-xs mb-4">
                 <div className="card-body text-start p-3 w-100">
-                  <Reviews rating="4" />
+                  <Reviews rating={4} />
                   <p className="mt-4">
                     It really matters and then like it really doesn’t matter.
                     What matters is the people who are sparked by it. And the

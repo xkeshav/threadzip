@@ -47,7 +47,7 @@ export default function ProductOverview(props: ProductOverView) {
                 </>
               )}
 
-              {sizes.S && <ProductSizes sizes={sizes} />}
+              {sizes && <ProductSizes sizes={sizes} />}
               <button className="btn btn-dark btn-lg" type="submit">
                 Add to cart
               </button>

@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default function ProductAccordion({ images, data }: Props) {
-  const tabs = [];
+  const tabs: any = [];
 
   Object.entries(data).map(([title, value], i) => {
     if (i != 0) {

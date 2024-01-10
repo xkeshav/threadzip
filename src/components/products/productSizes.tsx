@@ -19,7 +19,7 @@ export default function ProductSizes({ sizes }: ProductSizesProps) {
         {Object.entries(sizes).map(([size, amount], i) => (
           <div className="mb-3 me-3">
             <div className="form-check">
-              {amount != 0 ? (
+              {amount !== 0 ? (
                 <input
                   className="form-check-input rounded-2"
                   type="radio"

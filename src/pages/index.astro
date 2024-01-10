@@ -32,6 +32,7 @@ import TestimonialsFade from "../components/promo/testimonialsFade";
 import ReviewSimple from "../components/reviews/reviewSimple";
 import ReviewSummaryChart from "../components/reviews/reviewSummaryChart";
 import Layout from "../layouts/Layout.astro";
+import Categories from './categories.astro';
 
 const isProd = import.meta.env.PROD;
 const isDev = import.meta.env.DEV;
@@ -89,12 +90,12 @@ data.orders.forEach((order) => {
 	<main>
 		<Navbar />
 		<div class="container mt-5">
-			<h3>Product Lists</h3>
-			<p>Components and blocks for Product Lists</p>
-			<div class="row mt-5">
+			<h3>Product List</h3>
+			<p>Products with full details</p>
+			<div class="row">
 				{
 					data.products.map((product, i) => (
-            <Fragment  key={`card_prod_${i}`}>
+          <Fragment key={`card_prod_${i}`}>
 						<div class="col-md-6 col-lg-3">
 							<CardProduct
 								thumb_src={product.thumb_src}
@@ -111,35 +112,12 @@ data.orders.forEach((order) => {
 					))
 				}
 			</div>
-
-			<h3>Product Lists</h3>
-			<p>Cards with full details</p>
-			<div class="row">
-				{
-					data.products.map((product, i) => (
-          <Fragment  key={`card_prod_${i}`}>
-						<div class="col-md-6 col-lg-3">
-							<CardProduct
-								thumb_src={product.thumb_src}
-								thumb_alt={product.thumb_alt}
-								color={product.color}
-								colors={product.colors as any}
-								title={product.title}
-								description={product.description}
-								price={product.price}
-								position="left"
-							/>
-						</div>
-            </Fragment>
-					))
-				}
-			</div>
-  		<Debug {modeCheck} />
+      <!--<Debug {modeCheck} />-->
 
 			<div class="row mb-8">
 				<div class="d-block text-center mb-5">
 					<h3>Shop by category</h3>
-					<a class="text-dark font-weight-bold" href="#">Browse all categories &#62;</a>
+					<a class="text-dark font-weight-bold" href="/categories">Browse all categories &#62;</a>
 				</div>
 				{
 					data.categories.slice(0, 4).map((category) => (
@@ -154,63 +132,6 @@ data.orders.forEach((order) => {
 				}
 			</div>
 
-			<div class="row mb-5">
-				<div class="d-block text-center mb-5">
-					<h3>Shop by category</h3>
-					<a class="text-dark font-weight-bold" href="#">Browse all categories &#62;</a>
-				</div>
-				<div class="col-md-6">
-					<CardCategory
-						classList="h-100"
-						cta=""
-						thumb_src={data.categories[4].thumb_src}
-						title={data.categories[4].title}
-						collection=""
-					/>
-				</div>
-				<div class="col-md-6">
-					<div class="mb-4">
-						<CardCategory
-							classList=""
-							cta=""
-							thumb_src={data.categories[5].thumb_src}
-							title={data.categories[5].title}
-							collection=""
-						/>
-					</div>
-					<div class="">
-						<CardCategory
-							classList=""
-							cta=""
-							thumb_src={data.categories[6].thumb_src}
-							title={data.categories[6].title}
-							collection=""
-						/>
-					</div>
-				</div>
-			</div>
-
-			<div class="my-10">
-				<h3>Product Overview</h3>
-				<p class="mb-5">With image grid</p>
-
-				{
-					firstProduct && (
-						<ProductOverviewGrid
-							colors={firstProduct.colors!}
-							images={firstProduct.images!}
-							title={firstProduct.title}
-							full_description={firstProduct.full_description!}
-							price={firstProduct.price}
-							highlights={firstProduct.highlights!}
-							details={firstProduct.details!}
-							rating={firstProduct.rating!}
-							reviews={firstProduct.reviews!}
-							sizes={firstProduct.sizes!}
-						/>
-					)
-				}
-			</div>
 
 			<div class="my-5">
 				<h3>Product Overview</h3>
@@ -228,13 +149,13 @@ data.orders.forEach((order) => {
 				/>
 			</div>
 
-			<div class="my-10">
+			<!--<div class="my-10">
 				<ShoppingCart products={cartItems} />
 			</div>
 
 			<div class="my-10">
 				<ShoppingCart2 products={cartItems2} />
-			</div>
+			</div>-->
 
 			<div class="my-10">
 				<h3>Category filters</h3>
@@ -257,7 +178,7 @@ data.orders.forEach((order) => {
 					images={data.products[0].images!}
 				/>
 
-				<h3 class="mt-7">Product Quickviewers</h3>
+				<!--<h3 class="mt-7">Product Quickviewers</h3>
 				<p class="mb-5">With large size selector</p>
 				<ProductQuickview2
 					colors={data.products[1].colors!}
@@ -267,86 +188,17 @@ data.orders.forEach((order) => {
 					rating={data.products[1].rating!}
 					reviews={data.products[1].reviews!}
           stock={data.products[1].stock}
-				/>
+				/>-->
 			</div>
 
-			<div class="my-10">
+			<!--<div class="my-10">
 				<ProductFeature
 					title={data.products[0].title}
 					images={data.products[0].images!}
 					full_description={data.products[0].full_description!}
 					featuresDetails={data.products[0].featuresDetails!}
 				/>
-			</div>
-
-			<div class="my-10">
-				<ProductFeature2
-					title={data.products[0].title}
-					full_description={data.products[0].full_description!}
-					images={data.products[2].images}
-					data={data.products[2].data}
-				/>
-			</div>
-
-			<div class="my-10">
-				<h3 class="mt-5">Complex Navbar White</h3>
-				<a class="text-dark font-weight-bold" href="#">Browse all categories &#62;</a>
-				<br /><br />
-				<ComplexNavbar />
-				<div class="row mt-4">
-					{
-						data.products.map((product, i) => (
-            <Fragment  key={`card_prod_${i}`}>
-							<div class="col-12 col-md-6 col-lg-3">
-								<CardProduct
-									thumb_src={product.thumb_src}
-									thumb_alt={product.thumb_alt}
-									title={product.title}
-									price={product.price}
-                  description={product.description}
-                  color={product.color}
-                  colors={product.colors as any}
-                  position='center'
-								/>
-							</div>
-              </Fragment>
-						))
-					}
-				</div>
-
-				<h3 class="mt-5">Complex Navbar Dark</h3>
-				<a class="text-dark font-weight-bold" href="#">Browse all categories &#62;</a>
-				<br /><br />
-				<ComplexNavbarDark />
-				<div class="row mt-4">
-					{
-						data.products.map((product, i) => (
-            <Fragment  key={`card_prod_${i}`}>
-							<div class="col-12 col-md-6 col-lg-3">
-								<CardProduct
-									thumb_src={product.thumb_src}
-									thumb_alt={product.thumb_alt}
-									title={product.title}
-									price={product.price}
-                  description={product.description}
-                  color={product.color}
-                  colors={product.colors as any}
-                  position='center'
-								/>
-							</div>
-              </Fragment> 
-						))
-					}
-				</div>
-			</div>
-
-			<div class="my-10">
-				<h3>Simple Footer</h3>
-				<Footer />
-
-				<h3 class="mt-8">Complex Footer</h3>
-				<ComplexFooter />
-			</div>
+			</div>-->
 
 			<div class="my-10">
 				<h3 class="mt-5">Promo Sections</h3>
@@ -357,7 +209,7 @@ data.orders.forEach((order) => {
 				/>
 			</div>
 
-			<div class="my-10">
+			<!--<div class="my-10">
 				<h3 class="mt-5">Promo Sections</h3>
 				<p class="text-body">With fading background image and testimonials</p>
 				<PromoSectionLarge
@@ -367,9 +219,9 @@ data.orders.forEach((order) => {
 					pageHeaderMinVh="50vh"
 					pageHeaderRadius="1rem"
 				/>
-			</div>
+			</div>-->
 
-			<div class="my-10">
+			<!--<div class="my-10">
 				<h3>Checkout Forms</h3>
 				<p>Split with order summary</p>
 				<CheckoutOrderSummary products={cartItems} />
@@ -411,7 +263,7 @@ data.orders.forEach((order) => {
 				<h3 class="mt-5">Features</h3>
 				<p class="text-body">3-column with illustrations and header</p>
 				<IncentiveCols />
-			</div>
+			</div>-->
 
 			<Footer />
 		</div>

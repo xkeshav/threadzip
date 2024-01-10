@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
 interface Props {
-  featuresDetails:any;
+  featuresDetails: any;
 }
 
 export default function ProductAccordion({ featuresDetails }: Props) {
@@ -27,7 +27,7 @@ export default function ProductAccordion({ featuresDetails }: Props) {
               fill="#111827"
             />
           </svg>
-          <p>{value}</p>
+          <p>{value as any}</p>
         </div>
       </div>
       </Fragment>
