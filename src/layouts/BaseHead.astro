@@ -35,7 +35,6 @@ const socialImageURL = new URL("/images/threadzip_social.png", Astro.url).href;
 {/* Open Graph / Facebook */}
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
-<meta property="og:logo" content="threadzip" />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:site_name" content={title} />
@@ -44,14 +43,14 @@ const socialImageURL = new URL("/images/threadzip_social.png", Astro.url).href;
 <meta property="og:image:alt" content="threadzip logo" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:secure_url" content="https://www.threadzip.com/images/threadzip_social.png" />
+<meta property="og:image:secure_url" content="https://threadzip.com/images/threadzip_social.png" />
 
 {/* Twitter */}
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={socialImageURL} />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={socialImageURL} />
 <meta name="twitter:image:alt" content="threadzip logo" />
 <meta name="twitter:site" content="@threadzip" />
 <meta name="twitter:creator" content="@recursivezero" />
