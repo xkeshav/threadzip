@@ -4,7 +4,7 @@ const { author, title, description } = Astro.props;
 const titleSeparator = "•";
 const siteTitle = `${title} ${titleSeparator}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImageURL = new URL("/images/threadzip-logo-black.png", Astro.url).href;
+const socialImageURL = new URL("/images/threadzip_social.png", Astro.url).href;
 ---
 
 <meta charset="utf-8" />
@@ -41,9 +41,9 @@ const socialImageURL = new URL("/images/threadzip-logo-black.png", Astro.url).hr
 <meta property="og:locale" content={"en"} />
 <meta property="og:image" content={socialImageURL} />
 <meta property="og:image:alt" content="threadzip logo" />
-<meta property="og:image:width" content="1500" />
-<meta property="og:image:height" content="1500" />
-<meta property="og:image:secure_url" content="https://www.threadzip.com/images/threadzip_logo_black.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:secure_url" content="https://www.threadzip.com/images/threadzip_social.png" />
 
 {/* Twitter */}
 <meta name="twitter:card" content="summary_large_image" />
