@@ -65,10 +65,14 @@ const socialImageURL = new URL("/images/threadzip_social.png", Astro.url).href;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Google Analytics via Partytown -->
-<script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-    <script type="text/partytown" define:vars={{ gaId }}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", gaId);
-</script>
+<script
+  type="text/partytown"
+  src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+></script>
+
+<script type="text/partytown" set:html={`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', '${gaId}');
+`}></script>
