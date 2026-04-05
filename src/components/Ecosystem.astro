@@ -1,0 +1,132 @@
+---
+---
+<section id="ecosystem">
+  <div class="section-label">The Ecosystem</div>
+  <h2>Three platforms.<br/><em>One fabric ecosystem.</em></h2>
+  <p class="section-intro">Built for every persona in the fabric industry — from raw stock buyers to AI-powered designers — across three purpose-built platforms.</p>
+
+  <div class="ecosystem-grid">
+    <div class="eco-card">
+      <div class="eco-num">01</div>
+      <div class="eco-domain app">app.threadzip.com</div>
+      <div class="eco-title">B2B Marketplace</div>
+      <p class="eco-desc">The core commerce platform for the fabric trade. Connect directly. Buy and sell without friction.</p>
+      <ul class="eco-features">
+        <li>Single and group product listings for vendors</li>
+        <li>Dead Stock clearance — connect buyers and sellers offline</li>
+        <li>Trend showcasing for designers</li>
+        <li>No platform payments or logistics required</li>
+      </ul>
+      <a href="https://app.threadzip.com" class="eco-link app">Visit App →</a>
+    </div>
+    <div class="eco-card">
+      <div class="eco-num">02</div>
+      <div class="eco-domain pro">pro.threadzip.com</div>
+      <div class="eco-title">AI Creative Suite</div>
+      <p class="eco-desc">Upload any fabric swatch, generate limitless variations. Preview designs virtually before a single machine print is made.</p>
+      <ul class="eco-features">
+        <li>Advanced ML fabric generation from uploads</li>
+        <li>Color tone and palette control</li>
+        <li>Virtual design preview — no physical machine prints</li>
+        <li>Save cost and time on sampling cycles</li>
+      </ul>
+      <a href="https://pro.threadzip.com" class="eco-link pro">Visit Pro →</a>
+    </div>
+    <div class="eco-card">
+      <div class="eco-num">03</div>
+      <div class="eco-domain lab">lab.threadzip.com</div>
+      <div class="eco-title">Technical Intelligence</div>
+      <p class="eco-desc">Specialized AI for fabric knowledge. Ask technical questions. Search by property. Analyze swatches with precision.</p>
+      <ul class="eco-features">
+        <li>Specialized AI fabric chatbot</li>
+        <li>Technical fabric analysis from images</li>
+        <li>Property-based search (weight, weave, composition)</li>
+        <li>Expert-level knowledge on demand</li>
+      </ul>
+      <a href="https://lab.threadzip.com" class="eco-link lab">Visit Lab →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .eco-card {
+    background: var(--ink-2);
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .eco-card:hover { background: var(--ink-3); }
+
+  .eco-num {
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 24px;
+    opacity: 0.07;
+    color: var(--surface);
+    user-select: none;
+  }
+
+  .eco-domain {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .eco-domain.app { color: var(--amber); }
+  .eco-domain.pro { color: #90c890; }
+  .eco-domain.lab { color: #8faae0; }
+
+  .eco-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--surface);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .eco-desc {
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .eco-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 32px;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .eco-link.app { color: var(--amber); }
+  .eco-link.pro { color: #90c890; }
+  .eco-link.lab { color: #8faae0; }
+  .eco-link:hover { gap: 10px; }
+
+  @media (max-width: 900px) {
+    .ecosystem-grid { grid-template-columns: 1fr; }
+  }
+</style>

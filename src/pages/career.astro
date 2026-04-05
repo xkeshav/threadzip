@@ -1,0 +1,309 @@
+---
+import jobs from "../data/careers.json";
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout title="Careers" eyebrow="Join the Team">
+  <p class="careers-intro">
+    We're a small, focused team building the infrastructure for the global fabric trade. Every person we hire has a direct impact on the product and the industry we're serving.
+  </p>
+
+  <div class="perks-row">
+    {[
+      { icon: "🌍", label: "Remote-first", sub: "Work from anywhere in India" },
+      { icon: "⚡", label: "High ownership", sub: "Small team, big scope" },
+      { icon: "🧵", label: "Real domain", sub: "Building for a real industry" },
+      { icon: "📈", label: "Early stage", sub: "Equity + competitive salary" },
+    ].map((p) => (
+      <div class="perk-card">
+        <div class="perk-icon">{p.icon}</div>
+        <div class="perk-label">{p.label}</div>
+        <div class="perk-sub">{p.sub}</div>
+      </div>
+    ))}
+  </div>
+
+  <div class="careers-divider"></div>
+
+  <div class="section-label" style="margin-bottom: 32px;">Open Roles</div>
+
+  <div class="jobs-list">
+    {jobs.map((job) => (
+      <details class="job-card" id={job.id}>
+        <summary class="job-summary">
+          <div class="job-summary-left">
+            <div class="job-title">{job.title}</div>
+            <div class="job-meta">
+              <span class="job-badge">{job.team}</span>
+              <span class="job-dot">·</span>
+              <span>{job.location}</span>
+              <span class="job-dot">·</span>
+              <span>{job.type}</span>
+              <span class="job-dot">·</span>
+              <span>{job.experience}</span>
+            </div>
+          </div>
+          <span class="job-toggle-icon" aria-hidden="true">+</span>
+        </summary>
+
+        <div class="job-body">
+          <p class="job-description">{job.description}</p>
+
+          <div class="job-section">
+            <div class="job-section-title">What you'll do</div>
+            <ul>
+              {job.responsibilities.map((r) => <li>{r}</li>)}
+            </ul>
+          </div>
+
+          <div class="job-section">
+            <div class="job-section-title">What we're looking for</div>
+            <ul>
+              {job.requirements.map((r) => <li>{r}</li>)}
+            </ul>
+          </div>
+
+          {job.nice && job.nice.length > 0 && (
+            <div class="job-section">
+              <div class="job-section-title">Nice to have</div>
+              <ul>
+                {job.nice.map((r) => <li>{r}</li>)}
+              </ul>
+            </div>
+          )}
+
+          <div class="job-apply">
+            <a
+              href={`mailto:hello@threadzip.com?subject=Application: ${job.title}`}
+              class="btn-primary"
+            >
+              Apply for this role →
+            </a>
+            <span class="job-apply-note">Send your CV and a short note about why you're interested.</span>
+          </div>
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <div class="careers-open">
+    <p>Don't see a role that fits? We're always open to hearing from exceptional people.</p>
+    <a href="mailto:hello@threadzip.com?subject=General Application" class="btn-ghost">Send a general application</a>
+  </div>
+</PageLayout>
+
+<style>
+  .careers-intro {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 620px;
+    margin-bottom: 48px;
+  }
+
+  .perks-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 60px;
+  }
+
+  .perk-card {
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+  }
+
+  .perk-icon { font-size: 24px; margin-bottom: 12px; }
+
+  .perk-label {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--surface);
+    margin-bottom: 4px;
+  }
+
+  .perk-sub {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--muted);
+  }
+
+  .careers-divider {
+    height: 0.5px;
+    background: var(--border);
+    margin-bottom: 48px;
+  }
+
+  /* Job accordion */
+  .jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 60px;
+  }
+
+  .job-card {
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .job-card[open] { border-color: var(--amber-dim); }
+  .job-card:hover { border-color: var(--amber-dim); }
+
+  .job-summary {
+    list-style: none;
+    padding: 28px 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    user-select: none;
+  }
+  .job-summary::-webkit-details-marker { display: none; }
+
+  .job-summary-left { flex: 1; }
+
+  .job-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--surface);
+    margin-bottom: 8px;
+  }
+
+  .job-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+  }
+
+  .job-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(200,133,58,0.12);
+    color: var(--amber);
+  }
+
+  .job-dot { opacity: 0.4; }
+
+  .job-toggle-icon {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--muted);
+    transition: transform 0.25s, color 0.2s;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .job-card[open] .job-toggle-icon {
+    transform: rotate(45deg);
+    color: var(--amber);
+  }
+
+  .job-body {
+    padding: 0 32px 32px;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .job-description {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.75;
+    margin: 24px 0 28px;
+  }
+
+  .job-section { margin-bottom: 24px; }
+
+  .job-section-title {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--surface);
+    margin-bottom: 12px;
+  }
+
+  .job-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .job-section li {
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+  }
+  .job-section li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 9px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--muted-2);
+  }
+
+  .job-apply {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 0.5px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .job-apply-note {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--muted-2);
+  }
+
+  /* Open application */
+  .careers-open {
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .careers-open p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+  }
+
+  @media (max-width: 768px) {
+    .perks-row { grid-template-columns: 1fr 1fr; }
+    .job-summary { padding: 20px; }
+    .job-body { padding: 0 20px 24px; }
+    .careers-open { flex-direction: column; padding: 24px 20px; }
+    .careers-open a { width: 100%; text-align: center; }
+  }
+</style>

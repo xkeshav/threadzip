@@ -1,0 +1,218 @@
+---
+import company from "../data/company.json";
+import PageLayout from "../layouts/PageLayout.astro";
+
+const channels = [
+  {
+    icon: "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z\"/><polyline points=\"22,6 12,13 2,6\"/></svg>",
+    label: "General Enquiries",
+    value: company.email,
+    href: `mailto:${company.email}`,
+    desc: "For product questions, partnerships, and general information.",
+  },
+  {
+    icon: "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3\"/><line x1=\"12\" y1=\"17\" x2=\"12.01\" y2=\"17\"/></svg>",
+    label: "Support",
+    value: company.supportEmail,
+    href: `mailto:${company.supportEmail}`,
+    desc: "Having trouble with the platform? Our support team is here to help.",
+  },
+  {
+    icon: "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>",
+    label: "Legal & Privacy",
+    value: company.legalEmail,
+    href: `mailto:${company.legalEmail}`,
+    desc: "For privacy requests, legal notices, and compliance matters.",
+  },
+];
+---
+
+<PageLayout title="Contact" eyebrow="Get in Touch">
+  <p class="contact-intro">
+    We're a small team and we read every message. Reach out through the right channel below and we'll get back to you as soon as we can.
+  </p>
+
+  <div class="contact-channels">
+    {channels.map((ch) => (
+      <a href={ch.href} class="channel-card">
+        <div class="channel-icon" set:html={ch.icon} />
+        <div class="channel-content">
+          <div class="channel-label">{ch.label}</div>
+          <div class="channel-value">{ch.value}</div>
+          <p class="channel-desc">{ch.desc}</p>
+        </div>
+        <div class="channel-arrow">→</div>
+      </a>
+    ))}
+  </div>
+
+  <div class="contact-divider"></div>
+
+  <!-- Address -->
+  <div class="contact-address">
+    <div class="contact-address-label">Registered Office</div>
+    <address>
+      <strong>{company.address.line1}</strong><br />
+      {company.address.line2}<br />
+      {company.address.country}
+    </address>
+  </div>
+
+  <div class="contact-divider"></div>
+
+  <!-- Response time note -->
+  <div class="contact-note">
+    <div class="contact-note-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+    </div>
+    <div>
+      <div class="contact-note-title">Response times</div>
+      <p class="contact-note-body">General and support enquiries are typically answered within 1–2 business days. Legal requests may take up to 5 business days. We operate Monday–Friday, 10am–6pm IST.</p>
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  .contact-intro {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 560px;
+    margin-bottom: 48px;
+  }
+
+  .contact-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 60px;
+  }
+
+  .channel-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    text-decoration: none;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .channel-card:hover {
+    border-color: var(--amber-dim);
+    transform: translateX(4px);
+  }
+  .channel-card:hover .channel-arrow { color: var(--amber); }
+
+  .channel-icon {
+    width: 44px; height: 44px;
+    background: rgba(200,133,58,0.1);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    color: var(--amber);
+    flex-shrink: 0;
+  }
+  .channel-icon svg { width: 20px; height: 20px; }
+
+  .channel-content { flex: 1; }
+
+  .channel-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    margin-bottom: 4px;
+  }
+
+  .channel-value {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--surface);
+    margin-bottom: 6px;
+  }
+
+  .channel-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .channel-arrow {
+    font-size: 18px;
+    color: var(--muted-2);
+    transition: color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .contact-divider {
+    height: 0.5px;
+    background: var(--border);
+    margin: 48px 0;
+  }
+
+  .contact-address-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 16px;
+  }
+
+  address {
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  address strong { font-weight: 600; color: var(--surface); }
+
+  .contact-note {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+  }
+
+  .contact-note-icon {
+    width: 36px; height: 36px;
+    color: var(--amber);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .contact-note-icon svg { width: 100%; height: 100%; }
+
+  .contact-note-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--surface);
+    margin-bottom: 6px;
+  }
+
+  .contact-note-body {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 768px) {
+    .channel-card { padding: 20px; gap: 16px; }
+    .channel-card:hover { transform: none; }
+    .contact-note { flex-direction: column; gap: 12px; }
+  }
+</style>

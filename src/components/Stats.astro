@@ -1,0 +1,64 @@
+---
+---
+<section class="stats-section" style="padding: 0;">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">99<span>%</span></div>
+      <div class="stat-label">Search accuracy on technical property queries</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">&lt;2<span>s</span></div>
+      <div class="stat-label">Average ML model generation time per fabric variation</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4<span>×</span></div>
+      <div class="stat-label">Personas served — vendors, buyers, designers, operators</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0<span>%</span></div>
+      <div class="stat-label">Platform cut on Dead Stock transactions — buyers and sellers connect directly</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats-section {
+    background: var(--ink-2);
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat-item {
+    padding: 60px 40px;
+    border-right: 0.5px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--surface);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-num span { color: var(--amber); }
+
+  .stat-label {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 900px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-item { border-bottom: 0.5px solid var(--border); }
+  }
+</style>

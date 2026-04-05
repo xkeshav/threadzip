@@ -1,0 +1,18 @@
+---
+import { getEntry, render } from "astro:content";
+import company from "../data/company.json";
+import PageLayout from "../layouts/PageLayout.astro";
+
+const entry = await getEntry("legal", "cookie");
+if (!entry) throw new Error("cookie not found");
+const { Content } = await render(entry);
+---
+
+<PageLayout title="Cookie Policy" eyebrow="Legal" prose>
+  <p class="prose-meta">
+    Effective date: {entry.data.effectiveDate} &nbsp;·&nbsp; {company.name}
+  </p>
+  <div class="prose">
+    <Content />
+  </div>
+</PageLayout>

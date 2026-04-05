@@ -1,0 +1,166 @@
+---
+---
+<section id="ai-suite">
+  <div class="section-label">AI Creative Suite</div>
+  <div class="feature-split reverse">
+    <div>
+      <h2>Design virtually.<br/><em>Print only what sells.</em></h2>
+      <p class="section-intro" style="margin-bottom: 32px;">Upload a fabric swatch, choose your palette, and preview unlimited design variations — all before committing to a single machine run.</p>
+
+      <ul class="eco-features" style="max-width: 400px; gap: 14px;">
+        <li style="color: var(--surface); font-size: 14px;">Upload any existing fabric or swatch image to use as the generation base</li>
+        <li style="color: var(--surface); font-size: 14px;">Control tone, color palette, texture depth, and weave pattern variations</li>
+        <li style="color: var(--surface); font-size: 14px;">Instant virtual preview on garment templates — no photoshoot required</li>
+        <li style="color: var(--surface); font-size: 14px;">Reduce machine print costs by sampling digitally first</li>
+      </ul>
+    </div>
+
+    <div class="feature-visual">
+      <div class="feature-visual-header">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+        <span class="feature-visual-url">pro.threadzip.com/generate</span>
+      </div>
+      <div class="feature-visual-content">
+        <div class="ai-upload-zone">
+          <div class="ai-upload-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          </div>
+          <div class="ai-upload-text strong">Drop your fabric swatch here</div>
+          <div class="ai-upload-text">PNG, JPG · up to 20MB</div>
+        </div>
+
+        <div class="palette-row">
+          <div class="palette-label">Tone palette</div>
+          <div class="palette-swatches">
+            <div class="swatch-dot active" style="background: #8B6356;"></div>
+            <div class="swatch-dot" style="background: #4A6F8A;"></div>
+            <div class="swatch-dot" style="background: #5A7A5A;"></div>
+            <div class="swatch-dot" style="background: #8A8A6A;"></div>
+            <div class="swatch-dot" style="background: #2A2A2A;"></div>
+            <div class="swatch-dot add">+</div>
+          </div>
+        </div>
+
+        <div class="variations-label">Generated variations</div>
+        <div class="fabric-variations">
+          <div class="fab-var" style="background: linear-gradient(135deg, #8B6356 0%, #6B4A3E 50%, #9A7264 100%);">
+            <div class="fab-var-label">Original</div>
+          </div>
+          <div class="fab-var" style="background: linear-gradient(135deg, #4A6F8A 0%, #2D4F6A 50%, #5A7F9A 100%);">
+            <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent 0, transparent 3px, rgba(255,255,255,0.05) 3px, rgba(255,255,255,0.05) 4px);"></div>
+            <div class="fab-var-label">Slate</div>
+          </div>
+          <div class="fab-var" style="background: linear-gradient(135deg, #5A7A5A 0%, #3A5A3A 50%, #6A8A6A 100%);">
+            <div class="fab-var-label">Forest</div>
+          </div>
+          <div class="fab-var" style="background: linear-gradient(135deg, #8A8A6A 0%, #6A6A4A 50%, #9A9A7A 100%);">
+            <div style="position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0, transparent 5px, rgba(0,0,0,0.08) 5px, rgba(0,0,0,0.08) 6px);"></div>
+            <div class="fab-var-label">Khaki</div>
+          </div>
+        </div>
+
+        <div class="export-row">
+          <div class="export-info">4 variations generated · 0 machine prints used</div>
+          <button class="export-btn">Export</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ai-upload-zone {
+    border: 1px dashed var(--border-strong);
+    border-radius: 8px;
+    padding: 28px;
+    text-align: center;
+    background: rgba(200,133,58,0.03);
+  }
+
+  .ai-upload-icon {
+    width: 40px; height: 40px;
+    background: rgba(200,133,58,0.1);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 12px;
+    color: var(--amber);
+  }
+  .ai-upload-icon svg { width: 20px; height: 20px; }
+
+  .ai-upload-text { font-size: 12px; color: var(--muted); }
+  .ai-upload-text.strong { font-weight: 500; color: var(--surface); margin-bottom: 4px; }
+
+  .palette-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .palette-label { font-size: 11px; color: var(--muted); font-weight: 500; }
+  .palette-swatches { display: flex; gap: 4px; margin-left: 4px; }
+
+  .swatch-dot {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+  }
+  .swatch-dot.active { border: 2px solid var(--amber); }
+  .swatch-dot.add {
+    background: var(--border-strong);
+    border: 1px dashed var(--muted-2);
+    display: grid;
+    place-items: center;
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .variations-label { font-size: 11px; color: var(--muted); font-weight: 500; margin-bottom: 6px; }
+
+  .fabric-variations {
+    display: flex;
+    gap: 8px;
+  }
+
+  .fab-var {
+    flex: 1;
+    height: 70px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fab-var-label {
+    position: absolute;
+    bottom: 6px; left: 6px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: rgba(14,12,10,0.7);
+    color: var(--muted);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  .export-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 0.5px solid var(--border);
+    margin-top: 4px;
+  }
+  .export-info { font-size: 11px; color: var(--muted); }
+  .export-btn {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    background: rgba(144,200,144,0.15);
+    color: #90c890;
+    border: 0.5px solid rgba(144,200,144,0.3);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>

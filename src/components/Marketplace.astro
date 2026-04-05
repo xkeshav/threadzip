@@ -1,0 +1,164 @@
+---
+---
+<section id="marketplace">
+  <div class="section-label">Marketplace</div>
+  <div class="feature-split">
+    <div>
+      <h2>B2B commerce, <em>built for fabric.</em></h2>
+      <p class="section-intro" style="margin-bottom: 32px;">Direct connections between vendors, buyers, and designers — with zero platform overhead on transactions.</p>
+
+      <div class="personas-mini">
+        <div class="persona-card">
+          <div class="persona-icon" style="background: rgba(200,133,58,0.1); color: var(--amber);">
+            <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="persona-name">Vendors</div>
+          <div class="persona-desc">List single or group fabrics with full specs.</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon" style="background: rgba(90,130,200,0.1); color: #8faae0;">
+            <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <div class="persona-name">Buyers</div>
+          <div class="persona-desc">Discover and source stock directly from vendors.</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon" style="background: rgba(130,180,130,0.1); color: #90c890;">
+            <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <div class="persona-name">Designers</div>
+          <div class="persona-desc">Showcase trends and source unique materials.</div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon" style="background: rgba(200,133,58,0.08); color: var(--muted);">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <div class="persona-name">Operators</div>
+          <div class="persona-desc">Manage inventory and facilitate clearance stock.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-visual">
+      <div class="feature-visual-header">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+        <span class="feature-visual-url">app.threadzip.com/listings</span>
+      </div>
+      <div class="feature-visual-content">
+        <div class="listings-label">Active Listings</div>
+
+        <div class="product-card-mock">
+          <div class="product-swatch" style="background: linear-gradient(135deg, #8B6356, #6B4A3E);"></div>
+          <div class="product-info">
+            <div class="product-name">Slub Linen — Cognac Brown</div>
+            <div class="product-meta">340 GSM · 58" width · 2,400 meters</div>
+          </div>
+          <span class="product-badge badge-live">Live</span>
+        </div>
+
+        <div class="product-card-mock">
+          <div class="product-swatch" style="background: linear-gradient(135deg, #4A6F8A, #2D4F6A);"></div>
+          <div class="product-info">
+            <div class="product-name">Stretch Denim Twill — Slate</div>
+            <div class="product-meta">280 GSM · 60" width · 5,100 meters</div>
+          </div>
+          <span class="product-badge badge-live">Live</span>
+        </div>
+
+        <div class="product-card-mock" style="border-color: rgba(200,133,58,0.3);">
+          <div class="product-swatch" style="background: repeating-linear-gradient(45deg, #B5A06E 0, #B5A06E 4px, #8A7A54 4px, #8A7A54 8px);"></div>
+          <div class="product-info">
+            <div class="product-name">Cotton Madras Check — Dead Stock</div>
+            <div class="product-meta">220 GSM · 44" width · 800 meters</div>
+          </div>
+          <span class="product-badge badge-stock">Dead Stock</span>
+        </div>
+
+        <div class="dead-stock-note">
+          <div class="dead-stock-title">Dead Stock Clearance</div>
+          <div class="dead-stock-body">Buyers and sellers connect directly. No platform payments or logistics — just a direct link to close the deal offline.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .personas-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .listings-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .product-card-mock {
+    background: var(--ink-3);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .product-swatch {
+    width: 48px; height: 48px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .product-info { flex: 1; }
+
+  .product-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--surface);
+    margin-bottom: 3px;
+  }
+
+  .product-meta {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .product-badge {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-stock { background: rgba(200,133,58,0.18); color: var(--amber-light); }
+  .badge-live { background: rgba(40,200,64,0.15); color: #5dd87a; }
+
+  .dead-stock-note {
+    margin-top: 4px;
+    padding: 12px;
+    background: rgba(200,133,58,0.05);
+    border: 0.5px solid rgba(200,133,58,0.2);
+    border-radius: 6px;
+  }
+  .dead-stock-title {
+    font-size: 11px;
+    color: var(--amber);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .dead-stock-body {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+</style>

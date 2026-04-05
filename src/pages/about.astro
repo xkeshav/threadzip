@@ -1,0 +1,330 @@
+---
+import company from "../data/company.json";
+import PageLayout from "../layouts/PageLayout.astro";
+
+const values = [
+  {
+    icon: "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 2L3 14h9l-1 8 10-12h-9l1-8z\"/></svg>",
+    title: "Move fast, build right",
+    body: "We ship quickly but never at the cost of quality. Every feature we release is something we'd use ourselves.",
+  },
+  {
+    icon: "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 8v4l3 3\"/></svg>",
+    title: "Respect the industry",
+    body: "Textiles is a centuries-old trade. We build tools that respect how the industry actually works, not how we think it should.",
+  },
+  {
+    icon: "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/></svg>",
+    title: "Transparency first",
+    body: "No hidden fees, no opaque algorithms. We tell users exactly what we do with their data and how the platform works.",
+  },
+  {
+    icon: "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>",
+    title: "Sustainability matters",
+    body: "Dead stock clearance and digital sampling aren't just features — they're our contribution to reducing waste in the supply chain.",
+  },
+];
+
+const team = [
+  {
+    name: "Keshav Mohta",
+    role: "Founder & CTO",
+    bio: "Background in textile trade and enterprise software. Passionate about reducing friction in the fabric supply chain.",
+    avatar: null,
+  },
+  {
+    name: "Varun Daga",
+    role: "Co-founder & COO",
+    bio: "ML engineer with experience in computer vision and generative models. Previously [Company]. Building the AI layer of the fabric industry.",
+    avatar: null,
+  },
+  {
+    name: "Parvez Akhtar",
+    role: "Head of Product",
+    bio: "Product leader with a background in B2B marketplaces. Focused on making complex workflows feel simple.",
+    avatar: null,
+  },
+];
+---
+
+<PageLayout title="About Threadzip" eyebrow="Company">
+  <!-- Mission -->
+  <div class="about-mission">
+    <p class="mission-statement">
+      We're building the operating system for the global fabric trade — connecting buyers, vendors, and designers through AI-powered tools that reduce friction, eliminate waste, and unlock value at every stage of the supply chain.
+    </p>
+  </div>
+
+  <div class="about-divider"></div>
+
+  <!-- Story -->
+  <div class="about-section">
+    <div class="about-section-label">Our Story</div>
+    <div class="about-two-col">
+      <div>
+        <p>The global textile industry moves trillions of dollars of fabric every year — yet most of it is still bought and sold through phone calls, WhatsApp messages, and physical sample books. Information is siloed. Dead stock piles up. Buyers can't find what they need. Vendors can't reach the right buyers.</p>
+        <p>Threadzip was founded in {company.founded} by <strong>{company.name}</strong> to change that. We started with a simple question: what would the fabric industry look like if it had the same digital infrastructure as other major commodity markets?</p>
+      </div>
+      <div>
+        <p>The answer is a three-platform ecosystem — a B2B marketplace for direct commerce, an AI creative suite for virtual sampling, and a technical intelligence layer for fabric analysis. Together, they cover the full lifecycle of fabric from mill to market.</p>
+        <p>We're a small, focused team based in India, building for the global fabric trade. We're backed by our own conviction and the early trust of vendors, buyers, and designers who believe the industry deserves better tools.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-divider"></div>
+
+  <!-- Values -->
+  <div class="about-section">
+    <div class="about-section-label">What We Believe</div>
+    <div class="values-grid">
+      {values.map((v) => (
+        <div class="value-card">
+          <div class="value-icon" set:html={v.icon} />
+          <div class="value-title">{v.title}</div>
+          <p class="value-body">{v.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="about-divider"></div>
+
+  <!-- Team -->
+  <div class="about-section">
+    <div class="about-section-label">The Team</div>
+    <p class="about-team-intro">A small team with deep conviction about what the fabric industry needs.</p>
+    <div class="team-grid">
+      {team.map((member) => (
+        <div class="team-card">
+          <div class="team-avatar">
+            {member.avatar
+              ? <img src={member.avatar} alt={member.name} />
+              : <span>{member.name.charAt(0)}</span>
+            }
+          </div>
+          <div class="team-name">{member.name}</div>
+          <div class="team-role">{member.role}</div>
+          <p class="team-bio">{member.bio}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="about-divider"></div>
+
+  <!-- CTA -->
+  <div class="about-cta">
+    <div class="about-cta-text">
+      <div class="about-section-label">Join Us</div>
+      <h2>We're hiring</h2>
+      <p>We're a small team and every hire matters. If you're excited about building for the fabric industry, we'd love to hear from you.</p>
+    </div>
+    <div class="about-cta-actions">
+      <a href="/career" class="btn-primary">See Open Roles</a>
+      <a href="/contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  .about-mission {
+    margin-bottom: 60px;
+  }
+
+  .mission-statement {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--surface);
+    letter-spacing: -0.01em;
+    max-width: 680px;
+    border-left: 3px solid var(--amber);
+    padding-left: 24px;
+  }
+
+  .about-divider {
+    height: 0.5px;
+    background: var(--border);
+    margin: 60px 0;
+  }
+
+  .about-section { margin-bottom: 0; }
+
+  .about-section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .about-section-label::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--amber);
+  }
+
+  .about-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .about-two-col p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1em;
+  }
+
+  .about-two-col strong { font-weight: 600; color: var(--surface); }
+
+  /* Values */
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .value-card {
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    transition: border-color 0.3s;
+  }
+  .value-card:hover { border-color: var(--amber-dim); }
+
+  .value-icon {
+    width: 36px; height: 36px;
+    color: var(--amber);
+    margin-bottom: 16px;
+  }
+  .value-icon svg { width: 100%; height: 100%; }
+
+  .value-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--surface);
+    margin-bottom: 8px;
+  }
+
+  .value-body {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* Team */
+  .about-team-intro {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .team-card {
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+  }
+
+  .team-avatar {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: rgba(200,133,58,0.12);
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--amber);
+    overflow: hidden;
+  }
+  .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+  .team-name {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--surface);
+    margin-bottom: 4px;
+  }
+
+  .team-role {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--amber);
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+
+  .team-bio {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .about-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px 44px;
+    flex-wrap: wrap;
+  }
+
+  .about-cta h2 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--surface);
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+
+  .about-cta p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 400px;
+    line-height: 1.65;
+  }
+
+  .about-cta-actions {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .about-two-col { grid-template-columns: 1fr; gap: 0; }
+    .values-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
+    .about-cta { flex-direction: column; padding: 28px 24px; }
+    .about-cta-actions { width: 100%; }
+    .about-cta-actions a { flex: 1; text-align: center; }
+  }
+</style>

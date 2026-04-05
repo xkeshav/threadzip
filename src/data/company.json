@@ -1,0 +1,19 @@
+{
+  "name": "Recursivezero Private Limited",
+  "product": "Threadzip",
+  "founded": "2023",
+  "email": "hello@threadzip.com",
+  "supportEmail": "support@threadzip.com",
+  "legalEmail": "support@recursivezero.com",
+  "address": {
+    "line1": "Recursivezero Private Limited",
+    "line2": "Surat, Gujarat",
+    "country": "India"
+  },
+  "social": {
+    "twitter": "https://twitter.com/threadzip",
+    "linkedin": "https://linkedin.com/company/recursivezero"
+  },
+  "website": "https://www.threadzip.com",
+  "effectiveDate": "April 1, 2025"
+}

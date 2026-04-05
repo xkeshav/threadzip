@@ -1,0 +1,165 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Nav from "../../../components/Nav.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import Layout from "../../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const tags = [...new Set(posts.flatMap((p: CollectionEntry<"blog">) => p.data.tags))];
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag, posts: posts.filter((p: CollectionEntry<"blog">) => p.data.tags.includes(tag)) },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+const sorted = (posts as CollectionEntry<"blog">[]).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout title={`#${tag} — Threadzip Blog`} description={`Posts tagged with #${tag}`}>
+  <Nav />
+  <main class="tag-page">
+    <div class="tag-header">
+      <a href="/blog" class="back-link">← All posts</a>
+      <div class="tag-eyebrow">Tag</div>
+      <h1>#{tag}</h1>
+      <p class="tag-count">{sorted.length} post{sorted.length !== 1 ? "s" : ""}</p>
+    </div>
+
+    <div class="posts-list">
+      {sorted.map((post: CollectionEntry<"blog">) => (
+        <a href={`/blog/${post.id}`} class="post-row">
+          <div class="post-row-content">
+            <h2 class="post-row-title">{post.data.title}</h2>
+            <p class="post-row-desc">{post.data.description}</p>
+          </div>
+          <div class="post-row-meta">
+            <time>{new Date(post.data.pubDate).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</time>
+            <span class="post-row-arrow">→</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+  <SiteFooter />
+</Layout>
+
+<style>
+  .tag-page {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: var(--ink);
+  }
+
+  .tag-header {
+    padding: 60px 40px 40px;
+    max-width: 740px;
+    margin: 0 auto;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 40px;
+  }
+
+  .back-link {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    display: inline-block;
+    margin-bottom: 24px;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--amber); }
+
+  .tag-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+
+  .tag-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--surface);
+    margin-bottom: 8px;
+  }
+
+  .tag-count {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--muted);
+  }
+
+  .posts-list {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .post-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 0.5px solid var(--border);
+    text-decoration: none;
+    transition: padding-left 0.2s;
+  }
+  .post-row:hover { padding-left: 8px; }
+  .post-row:hover .post-row-arrow { color: var(--amber); }
+
+  .post-row-content { flex: 1; }
+
+  .post-row-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--surface);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .post-row-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .post-row-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .post-row-meta time {
+    font-size: 12px;
+    color: var(--muted-2);
+    white-space: nowrap;
+  }
+
+  .post-row-arrow {
+    font-size: 16px;
+    color: var(--muted-2);
+    transition: color 0.2s;
+  }
+
+  @media (max-width: 640px) {
+    .tag-header, .posts-list { padding-left: 20px; padding-right: 20px; }
+    .post-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .post-row-meta { flex-direction: row; align-items: center; }
+  }
+</style>

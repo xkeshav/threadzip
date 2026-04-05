@@ -1,0 +1,172 @@
+---
+---
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img
+          id="footerLogo"
+          src="/images/threadzip.png"
+          alt="Threadzip"
+          class="footer-logo-img"
+        />
+      </div>
+      <p class="footer-tagline">The fabric industry ecosystem. AI-powered marketplace, creative suite, and technical intelligence — built for the global fabric trade.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Ecosystem</div>
+      <ul class="footer-links">
+        <li><a href="https://app.threadzip.com">App — Marketplace</a></li>
+        <li><a href="https://pro.threadzip.com">Pro — AI Suite</a></li>
+        <li><a href="https://lab.threadzip.com">Lab — Intelligence</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a href="#">For Vendors</a></li>
+        <li><a href="#">For Buyers</a></li>
+        <li><a href="#">For Designers</a></li>
+        <li><a href="#">Dead Stock</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/career">Careers</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Threadzip. All rights reserved.</div>
+    <ul class="footer-legal">
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Service</a></li>
+      <li><a href="/cookie">Cookie Policy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--ink-2);
+    border-top: 0.5px solid var(--border);
+    padding: 60px 40px 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+
+  .footer-brand { max-width: 260px; }
+
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+
+  .footer-logo-img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 14px;
+    display: block;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .footer-col-title {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--surface);
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--surface); }
+
+  .footer-bottom {
+    padding-top: 28px;
+    border-top: 0.5px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--muted-2);
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .footer-legal a {
+    font-size: 12px;
+    color: var(--muted-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-legal a:hover { color: var(--muted); }
+
+  @media (max-width: 900px) {
+    footer { padding: 40px 20px 32px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    .footer-legal { flex-wrap: wrap; justify-content: center; gap: 16px; }
+  }
+
+  @media (max-width: 480px) {
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const FOOTER_LOGOS: Record<string, string> = {
+    dark:  "/images/threadzip.png",
+    light: "/images/icon-circle-light.svg",
+  };
+
+  function syncFooterLogo() {
+    const logo = document.getElementById("footerLogo") as HTMLImageElement | null;
+    if (!logo) return;
+    const theme = document.documentElement.getAttribute("data-theme") ?? "dark";
+    logo.src = FOOTER_LOGOS[theme] ?? FOOTER_LOGOS.dark;
+  }
+
+  syncFooterLogo();
+
+  new MutationObserver(syncFooterLogo)
+    .observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+</script>

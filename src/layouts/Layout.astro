@@ -1,37 +1,23 @@
 ---
-import BaseHead from './BaseHead.astro';
+import "../styles/global.css";
+import BaseHead from "./BaseHead.astro";
 
 const { title, description, author } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-      <BaseHead title={title} description={description} author={author} />
-	<body>
-		<slot />
-	</body>
-	<script src="https://kit.fontawesome.com/349ee9c857.js" crossorigin="anonymous"></script>
-	<!-- Bootstrap JavaScript Bundle with Popper -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-		crossorigin="anonymous"></script>
-	<!-- Product JavaScript -->
-	<script>
-		import "/assets/js/astro-ecommerce.js";
-	</script>
+  <head>
+    <BaseHead title={title} description={description} author={author} />
+    <!-- Blocking script: runs before paint, prevents theme flash -->
+    <script is:inline>
+      (function() {
+        const t = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
-<style is:global>
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

@@ -1,15 +1,17 @@
+import mdx from "@astrojs/mdx";
+import node from "@astrojs/node";
+import react from "@astrojs/react";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
-import react from "@astrojs/react";
-
-const isProd = import.meta.env.PROD;
-
-// https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  integrations: [react(), mdx()],
+  output: "static",
   site: "https://www.threadzip.com",
   base: ".",
   trailingSlash: "ignore",
-  prefetch: true
+  prefetch: true,
+  adapter: node({
+    mode: "standalone",
+  }),
 });

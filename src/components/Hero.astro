@@ -1,0 +1,246 @@
+---
+---
+<section class="hero" style="padding-top: 120px;">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Fabric Industry Ecosystem</div>
+    <h1>Where fabric <em>commerce</em> meets intelligence</h1>
+    <p class="hero-body">
+      A unified ecosystem for the global fabric trade — connecting buyers, vendors, and designers through AI-powered tools for generation, analysis, and direct commerce.
+    </p>
+    <div class="hero-actions">
+      <a href="https://app.threadzip.com" class="btn-primary">Explore Marketplace</a>
+      <a href="https://pro.threadzip.com" class="btn-ghost">Try AI Suite</a>
+    </div>
+  </div>
+
+  <div class="hero-bento">
+    <div class="bento-card span-col">
+      <div class="woven-bg"></div>
+      <div class="bento-noise"></div>
+      <div class="bento-tag">Fabric Lifecycle</div>
+      <div class="bento-title">From analysis to sale — end to end</div>
+      <div class="lifecycle">
+        <span class="lifecycle-step lab">Lab Analysis</span>
+        <span class="lifecycle-arrow">→</span>
+        <span class="lifecycle-step pro">Pro Generation</span>
+        <span class="lifecycle-arrow">→</span>
+        <span class="lifecycle-step app">App Commerce</span>
+      </div>
+    </div>
+    <div class="bento-card">
+      <div class="bento-noise"></div>
+      <div class="bento-tag">Pro</div>
+      <div class="bento-title">Virtual Sampling</div>
+      <div class="bento-body">Generate infinite fabric variations without machine prints.</div>
+      <div class="bento-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+    </div>
+    <div class="bento-card">
+      <div class="bento-noise"></div>
+      <div class="bento-tag">Lab</div>
+      <div class="bento-title">AI Chatbot Analysis</div>
+      <div class="bento-body">Technical fabric properties searched with natural language.</div>
+      <div class="bento-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    padding: 120px 40px 80px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,133,58,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,133,58,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: -20%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(200,133,58,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 24px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--amber);
+  }
+
+  .hero-body {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 440px;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-bento {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    height: 460px;
+    animation: fadeUp 0.9s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+
+  .bento-card {
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .bento-card:hover { border-color: var(--amber-dim); transform: translateY(-2px); }
+  .bento-card.span-col { grid-column: 1 / -1; }
+
+  .bento-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .bento-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--amber);
+    border-radius: 50%;
+    display: block;
+  }
+
+  .bento-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--surface);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .bento-body {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .bento-icon {
+    position: absolute;
+    bottom: 20px; right: 20px;
+    width: 36px; height: 36px;
+    background: rgba(200,133,58,0.1);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+  }
+  .bento-icon svg { width: 18px; height: 18px; stroke: var(--amber); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  .bento-noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px;
+    pointer-events: none;
+  }
+
+  .woven-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--surface) 0, var(--surface) 1px,
+      transparent 0, transparent 50%
+    );
+    background-size: 8px 8px;
+    pointer-events: none;
+  }
+
+  .lifecycle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .lifecycle-step {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .lifecycle-step.lab { background: rgba(94,125,200,0.15); color: #8faae0; }
+  .lifecycle-step.pro { background: rgba(130,180,130,0.15); color: #90c890; }
+  .lifecycle-step.app { background: rgba(200,133,58,0.18); color: var(--amber-light); }
+  .lifecycle-arrow { color: var(--muted); font-size: 12px; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 100px 20px 60px; }
+    .hero-bento { height: 300px; }
+  }
+</style>

@@ -1,0 +1,383 @@
+---
+import Nav from "../components/Nav.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+const { title, description, pubDate, author, tags, updatedDate } = frontmatter;
+
+const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
+  year: "numeric", month: "long", day: "numeric",
+});
+const formattedUpdated = updatedDate
+  ? new Date(updatedDate).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
+  : null;
+---
+
+<Layout title={title} description={description}>
+  <Nav />
+  <main class="blog-main">
+    <article class="blog-article">
+      <header class="blog-header">
+        <div class="blog-tags">
+          {tags.map((tag: string) => (
+            <a href={`/blog/tag/${tag}`} class="blog-tag">#{tag}</a>
+          ))}
+        </div>
+        <h1 class="blog-title">{title}</h1>
+        <p class="blog-description">{description}</p>
+        <div class="blog-meta">
+          <span class="blog-author">{author}</span>
+          <span class="blog-sep">·</span>
+          <time datetime={pubDate.toString()}>{formattedDate}</time>
+          {formattedUpdated && (
+            <span class="blog-updated"> · Updated {formattedUpdated}</span>
+          )}
+        </div>
+      </header>
+
+      <div class="blog-body">
+        <slot />
+      </div>
+
+      <footer class="blog-footer">
+        <div class="blog-tags">
+          {tags.map((tag: string) => (
+            <a href={`/blog/tag/${tag}`} class="blog-tag"># {tag}</a>
+          ))}
+        </div>
+        <a href="/blog" class="back-link">← Back to Blog</a>
+      </footer>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
+
+<style is:global>
+  /* ── Blog prose ── */
+  .blog-body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--surface);
+  }
+
+  .blog-body p { margin-bottom: 1.4em; }
+
+  .blog-body h2 {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--surface);
+    margin: 2.4em 0 0.6em;
+    line-height: 1.15;
+  }
+
+  .blog-body h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--surface);
+    margin: 1.8em 0 0.5em;
+  }
+
+  .blog-body strong { font-weight: 600; color: var(--surface); }
+
+  .blog-body a {
+    color: var(--amber);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .blog-body hr {
+    border: none;
+    border-top: 0.5px solid var(--border-strong);
+    margin: 3em 0;
+  }
+
+  .blog-body em { font-style: italic; color: var(--muted); }
+
+  .blog-body ul, .blog-body ol {
+    padding-left: 1.4em;
+    margin-bottom: 1.4em;
+  }
+  .blog-body li { margin-bottom: 0.4em; }
+
+  .blog-body blockquote {
+    border-left: 3px solid var(--amber);
+    padding: 0.6em 1.2em;
+    margin: 1.6em 0;
+    background: rgba(200,133,58,0.05);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ── Charts ── */
+  .chart-wrap {
+    margin: 2em 0;
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px 20px;
+    overflow-x: auto;
+  }
+
+  .chart-label {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 20px;
+  }
+
+  .bar-chart, .donut-chart, .hbar-chart {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+  }
+
+  .chart-axis-text {
+    font-family: var(--font-body);
+    font-size: 11px;
+    fill: var(--muted);
+  }
+
+  .chart-bar-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--surface);
+  }
+
+  .chart-bar-label.proj { fill: var(--muted); }
+
+  .hbar-label { font-size: 11px; }
+
+  .donut-center-num {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 800;
+    fill: var(--surface);
+  }
+
+  .donut-center-label {
+    font-family: var(--font-body);
+    font-size: 10px;
+    fill: var(--muted);
+  }
+
+  .chart-legend {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .legend-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    background: var(--amber);
+    opacity: 0.8;
+  }
+  .legend-dot.dashed {
+    opacity: 0.4;
+    outline: 1px dashed var(--amber);
+    background: transparent;
+  }
+
+  /* ── Stat cards ── */
+  .stat-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 2em 0;
+  }
+
+  .stat-card {
+    background: var(--ink-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .stat-card-num {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--amber);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-card-label {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    margin: 2em 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 28px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--border-strong);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0 0 28px 20px;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    left: -21px;
+    top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--ink-3);
+    border: 1.5px solid var(--muted-2);
+  }
+
+  .timeline-item.highlight .timeline-dot {
+    background: var(--amber);
+    border-color: var(--amber);
+    box-shadow: 0 0 0 4px rgba(200,133,58,0.15);
+  }
+
+  .timeline-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--surface);
+    margin-bottom: 4px;
+  }
+
+  .timeline-item.highlight .timeline-title { color: var(--amber); }
+
+  .timeline-body {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .stat-cards { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<style>
+  .blog-main {
+    padding-top: 80px;
+    min-height: 100vh;
+    background: var(--ink);
+  }
+
+  .blog-article {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+
+  .blog-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .blog-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(200,133,58,0.12);
+    color: var(--amber);
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .blog-tag:hover { background: rgba(200,133,58,0.22); }
+
+  .blog-title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: var(--surface);
+    margin-bottom: 16px;
+  }
+
+  .blog-description {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .blog-meta {
+    font-size: 13px;
+    color: var(--muted-2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .blog-author { font-weight: 500; color: var(--muted); }
+  .blog-sep { opacity: 0.5; }
+
+  .blog-footer {
+    margin-top: 60px;
+    padding-top: 32px;
+    border-top: 0.5px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .back-link {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--amber);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: gap 0.2s;
+  }
+  .back-link:hover { text-decoration: underline; }
+</style>

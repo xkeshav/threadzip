@@ -1,0 +1,58 @@
+[
+  {
+    "id": "fe-engineer",
+    "title": "Frontend Engineer",
+    "team": "Engineering",
+    "location": "Remote (India)",
+    "type": "Full-time",
+    "experience": "2–5 years",
+    "description": "We're looking for a frontend engineer who loves building fast, beautiful interfaces. You'll work directly on the Threadzip marketplace and AI suite — shaping the experience for thousands of fabric industry professionals.",
+    "responsibilities": [
+      "Build and maintain UI components across app.threadzip.com and pro.threadzip.com",
+      "Collaborate with design to implement pixel-perfect, accessible interfaces",
+      "Optimize for performance, Core Web Vitals, and mobile responsiveness",
+      "Integrate REST and GraphQL APIs with clean state management",
+      "Write maintainable, well-tested TypeScript code"
+    ],
+    "requirements": [
+      "Strong proficiency in React and TypeScript",
+      "Experience with modern CSS (custom properties, grid, animations)",
+      "Familiarity with Astro, Next.js, or similar frameworks",
+      "Understanding of web performance and accessibility fundamentals",
+      "Good communication and ability to work async"
+    ],
+    "nice": [
+      "Experience with AI/ML product interfaces",
+      "Background in e-commerce or marketplace products",
+      "Contributions to open source"
+    ]
+  },
+  {
+    "id": "ml-engineer",
+    "title": "ML Engineer — Fabric AI",
+    "team": "AI / Research",
+    "location": "Remote (India)",
+    "type": "Full-time",
+    "experience": "3–6 years",
+    "description": "You'll work on the core AI models that power Threadzip Pro and Lab — fabric generation, swatch analysis, and property-based search. This is a high-impact role at the intersection of computer vision and the textile industry.",
+    "responsibilities": [
+      "Train and fine-tune image generation models for fabric texture synthesis",
+      "Build and maintain the fabric analysis pipeline (composition, GSM, weave detection)",
+      "Develop the semantic search system for property-based fabric queries",
+      "Collaborate with product to translate industry requirements into model objectives",
+      "Monitor model performance and iterate on production deployments"
+    ],
+    "requirements": [
+      "Strong Python and experience with PyTorch or JAX",
+      "Hands-on experience with diffusion models or GANs for image generation",
+      "Familiarity with computer vision tasks (classification, segmentation)",
+      "Experience deploying ML models to production",
+      "Ability to work with domain-specific datasets and limited labeled data"
+    ],
+    "nice": [
+      "Knowledge of textile science or material properties",
+      "Experience with multimodal models (vision + language)",
+      "Published research or open-source ML contributions"
+    ]
+  }
+]

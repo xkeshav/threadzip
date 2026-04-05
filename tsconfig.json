@@ -4,8 +4,9 @@
     "allowJs": true,
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
@@ -14,5 +15,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
   "extends": "astro/tsconfigs/strict"
 }

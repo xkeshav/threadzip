@@ -1,0 +1,106 @@
+---
+---
+<section id="lab">
+  <div class="section-label">Technical Intelligence</div>
+  <div class="feature-split">
+    <div>
+      <h2>Ask the expert.<br/><em>Get fabric answers.</em></h2>
+      <p class="section-intro" style="margin-bottom: 32px;">Lab is the knowledge engine behind Threadzip — a specialized AI trained on fabric science, weave structures, and material properties.</p>
+
+      <ul class="eco-features" style="max-width: 400px; gap: 14px;">
+        <li style="color: var(--surface); font-size: 14px;">Upload a fabric swatch and receive instant technical analysis of composition, GSM, weave type, and finish</li>
+        <li style="color: var(--surface); font-size: 14px;">Search the catalog using natural property descriptions: "breathable summer weight under 180 GSM"</li>
+        <li style="color: var(--surface); font-size: 14px;">Conversational interface makes complex technical knowledge accessible to everyone on the team</li>
+      </ul>
+    </div>
+
+    <div class="feature-visual">
+      <div class="feature-visual-header">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+        <span class="feature-visual-url">lab.threadzip.com/chat</span>
+      </div>
+      <div class="feature-visual-content">
+        <div class="chat-messages">
+          <div class="chat-msg">
+            <div class="chat-avatar user">U</div>
+            <div class="chat-bubble user">I uploaded this swatch — can you analyze it and tell me what it is?</div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar ai">AI</div>
+            <div class="chat-bubble ai">
+              Analysis complete. This appears to be a <span class="chat-highlight">slub linen-cotton blend</span> (approx. 70% linen, 30% cotton), plain weave with characteristic slub irregularities in the warp yarn.<br/><br/>
+              <span class="chat-props-label">Key properties detected:</span><br/>
+              <span class="chat-tag">280–310 GSM</span>
+              <span class="chat-tag">Plain weave</span>
+              <span class="chat-tag">Medium hand</span>
+              <span class="chat-tag">Natural dye-ready</span>
+            </div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar user">U</div>
+            <div class="chat-bubble user">Find me similar fabrics under 300 GSM, suitable for resort wear.</div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar ai">AI</div>
+            <div class="chat-bubble ai">
+              Found <span class="chat-highlight">14 matches</span> — filtering for resort-wear suitability (breathability, drape, hand feel)...<span class="cursor-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .chat-msg {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .chat-avatar {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .chat-avatar.ai { background: rgba(143,170,224,0.2); color: #8faae0; }
+  .chat-avatar.user { background: rgba(200,133,58,0.2); color: var(--amber); }
+
+  .chat-bubble {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.6;
+    padding: 10px 14px;
+    border-radius: 8px;
+    max-width: 80%;
+  }
+  .chat-bubble.ai { background: var(--ink-3); color: var(--surface); border-bottom-left-radius: 2px; }
+  .chat-bubble.user { background: rgba(200,133,58,0.12); color: var(--surface); border-bottom-right-radius: 2px; margin-left: auto; }
+
+  .chat-highlight { color: #8faae0; font-weight: 500; }
+  .chat-props-label { font-weight: 500; color: var(--surface); }
+
+  .chat-tag {
+    display: inline-block;
+    background: rgba(143,170,224,0.15);
+    color: #8faae0;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin: 2px 2px 0 0;
+    font-weight: 500;
+  }
+</style>
