@@ -32,13 +32,14 @@
   /* #8a8278 */
   --muted-2: oklch(46% 0.010 60);
   /* #6b6460 */
-  --border: oklch(10% 0.012 60 / 0.12);
+  --border: oklch(0.77 0.11 50.56 / 0.21);
   --border-strong: oklch(10% 0.012 60 / 0.22);
   --white: #ffffff;
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --radius: 4px;
   --radius-lg: 10px;
+  --link-v: oklch(0.59 0.22 9.59);
 }
 
 [data-theme="light"] {
@@ -274,7 +275,9 @@ section {
   letter-spacing: 0.05em;
 
   a {
-    color: var(--surface);
+    color: var(--link-v);
+    font-style: italic;
+    font-size: small;
   }
 }
 

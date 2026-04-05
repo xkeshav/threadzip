@@ -1,5 +1,6 @@
 ---
 const { author, title, description } = Astro.props;
+const gaId = import.meta.env.PUBLIC_GA_ID;
 
 const titleSeparator = "•";
 const siteTitle = `${title} ${titleSeparator}`;
@@ -62,3 +63,12 @@ const socialImageURL = new URL("/images/threadzip_social.png", Astro.url).href;
 <link rel="alternate" type="application/rss+xml" title={title} href="/rss.xml" />
 
 <meta name="generator" content={Astro.generator} />
+
+<!-- Google Analytics via Partytown -->
+<script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+    <script type="text/partytown" define:vars={{ gaId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", gaId);
+</script>
