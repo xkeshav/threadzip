@@ -1,7 +1,7 @@
 {
   "name": "@recursivezero/threadzip",
   "type": "module",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "private": false,
   "engines": {
     "node": ">=22.12.0"
@@ -24,6 +24,7 @@
     "@astrojs/node": "^10.0.4",
     "@astrojs/partytown": "^2.1.6",
     "@astrojs/react": "^5.0.2",
+    "@astrojs/sitemap": "^3.7.2",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^6.1.3",
