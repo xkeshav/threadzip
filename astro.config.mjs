@@ -10,7 +10,10 @@ export default defineConfig({
     react(), 
     mdx(),
     sitemap({
-      entryLimit: 5000
+      entryLimit: 5000,
+      changefreq: "weekly",
+      priority: 0.7,
+      filter: (page) => !page.includes("/tag/")
     }),
     partytown({
       config: {
