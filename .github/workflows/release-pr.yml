@@ -12,6 +12,8 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     permissions:
       contents: write
       pull-requests: write
