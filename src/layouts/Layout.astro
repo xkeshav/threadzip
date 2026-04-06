@@ -17,7 +17,18 @@ const { title, description, author } = Astro.props;
       })();
     </script>
   </head>
-  <body>
+  <body >
+    <div class="app-container">
     <slot />
+    </div>
   </body>
 </html>
+
+<style is:global>
+  .app-container {
+    container-type: inline-size;
+    container-name: basic;
+    width: 100%;
+    min-height: 100vh;
+  }
+</style>

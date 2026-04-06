@@ -53,9 +53,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4px;
-    background: var(--border);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius-lg);
+    /* background-color: var(--border); */
+    /* border: 0.5px solid var(--border); */
     overflow: hidden;
   }
 
@@ -65,7 +64,10 @@
     position: relative;
     overflow: hidden;
     transition: background 0.3s;
+    border: 2px dashed var(--border);
+    border-radius: 1ch;
   }
+
   .eco-card:hover { background: var(--ink-3); }
 
   .eco-num {
@@ -125,6 +127,13 @@
   .eco-link.pro { color: #90c890; }
   .eco-link.lab { color: #8faae0; }
   .eco-link:hover { gap: 10px; }
+
+  @container basic (max-width: 1064px) {
+    .ecosystem-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
 
   @media (max-width: 900px) {
     .ecosystem-grid { grid-template-columns: 1fr; }

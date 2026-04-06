@@ -76,23 +76,28 @@
   }
 
   .nav-logo-text {
-    font-family: var(--font-display);
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    font-size: var(--brand-size);
+    font-weight: var(--brand-weight);
+    letter-spacing: var(--brand-letter-spacing);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: opacity 0.2s ease;
     line-height: 1;
     display: flex;
     align-items: baseline;
     gap: 0;
+    white-space: nowrap;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   .logo-thread {
-    font-size: 20px;
     font-weight: 700;
-    color: #f5f2ed;
+    color: var(--surface-2);
   }
 
   .logo-zip {
-    font-size: 18px;
     font-weight: 800;
     color: var(--amber);
     letter-spacing: 0.04em;
