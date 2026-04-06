@@ -16,7 +16,6 @@ export default defineConfig({
   ],
   output: "static",
   site: "https://threadzip.com",
-  base: "/",
   trailingSlash: "ignore",
   prefetch: true
 });
