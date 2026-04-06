@@ -1,0 +1,24 @@
+name: Bump Version
+run-name: bump version and update changelog
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: version-${{ github.ref }} # group by branch
+  cancel-in-progress: true # cancel older runs
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run bump-version action
+        uses: recursivezero/action-club/.github/actions/bump-version@v0.2.58
+        with:
+          node-version: "20"
+          enable-bump: "true"
+          enable-changelog: "true" # toggle changelog update

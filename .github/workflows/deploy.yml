@@ -3,7 +3,11 @@ run-name: Deploy threadzip.com
 
 on:
   push:
-    branches: [main]
+    branches: [release]
+
+concurrency:
+  group: build-${{ github.ref }} # group by branch
+  cancel-in-progress: true # cancel older runs
 
 permissions:
   contents: read
