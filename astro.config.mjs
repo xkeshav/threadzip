@@ -13,7 +13,13 @@ export default defineConfig({
       entryLimit: 5000,
       changefreq: "weekly",
       priority: 0.7,
-      filter: (page) => !page.includes("/tag/")
+      filter: (page) => !page.includes("/tag/"),
+      serialize(item) {
+        return {
+          url: item.url,
+          lastmod: new Date().toISOString(),
+        };
+      },
     }),
     partytown({
       config: {
