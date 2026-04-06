@@ -39,20 +39,23 @@ const socialImageURL = new URL("/images/threadzip_social.png", Astro.url).href;
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:site_name" content={title} />
-<meta property="og:locale" content={"en"} />
+<meta property="og:locale" content={"en_IN"} />
 <meta property="og:image" content={socialImageURL} />
-<meta property="og:image:alt" content="threadzip logo" />
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="AI-powered fabric search and sourcing platform for textile industry" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:secure_url" content="https://threadzip.com/images/threadzip_social.png" />
+<meta property="og:updated_time" content={new Date().toISOString()}>
 
 {/* Twitter */}
+<meta name="twitter:domain" content="threadzip.com">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content={canonicalURL} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={socialImageURL} />
-<meta name="twitter:image:alt" content="threadzip logo" />
+<meta name="twitter:image:alt" content="AI-powered fabric search and sourcing platform for textile industry" />
 <meta name="twitter:site" content="@threadzip" />
 <meta name="twitter:creator" content="@recursivezero" />
 

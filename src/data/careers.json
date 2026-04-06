@@ -1,5 +1,35 @@
 [
   {
+    "id": "sales-intern-surat",
+    "title": "Sales & Business Development Intern",
+    "team": "Business",
+    "location": "Surat (On-ground)",
+    "type": "Internship",
+    "experience": "0-2 years (MBA / pursuing MBA preferred)",
+    "description": "We're looking for a highly motivated sales intern to represent Threadzip on the ground in Surat. You will directly engage with textile manufacturers, traders, and suppliers — showcasing our AI-powered fabric search and sourcing platform and driving early adoption.",
+    "responsibilities": [
+      "Visit textile markets, manufacturers, and traders in Surat to introduce Threadzip",
+      "Demonstrate product features including fabric search, analysis, and sourcing",
+      "Onboard new users and collect real-time feedback from industry stakeholders",
+      "Build relationships with key players in the textile ecosystem",
+      "Coordinate with the product team to share insights from field interactions",
+      "Assist in identifying partnership and business opportunities"
+    ],
+    "requirements": [
+      "Must be based in or willing to work on-ground in Surat",
+      "Fluent in Hindi (Gujarati is a strong plus)",
+      "Strong communication and interpersonal skills",
+      "Basic understanding of business, sales, or marketing concepts",
+      "Self-driven and comfortable with field work"
+    ],
+    "nice": [
+      "MBA (pursuing or completed) in Marketing / Sales / Business",
+      "Prior internship or exposure to sales or field work",
+      "Interest in textile or manufacturing industry",
+      "Ability to speak Gujarati"
+    ]
+  },
+  {
     "id": "fe-engineer",
     "title": "Frontend Engineer",
     "team": "Engineering",
