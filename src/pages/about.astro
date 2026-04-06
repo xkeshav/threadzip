@@ -43,6 +43,7 @@ const team = [
     role: "Head of Product",
     bio: "Product leader with a background in B2B marketplaces. Focused on making complex workflows feel simple.",
     avatar: null,
+    visible: false
   },
 ];
 ---
@@ -51,7 +52,7 @@ const team = [
   <!-- Mission -->
   <div class="about-mission">
     <p class="mission-statement">
-      We're building the operating system for the global fabric trade — connecting buyers, vendors, and designers through AI-powered tools that reduce friction, eliminate waste, and unlock value at every stage of the supply chain.
+      We're building the operating system for the global fabric trade, made for Surat, India — connecting buyers, vendors, and designers through AI-powered tools that reduce friction, eliminate waste, and unlock value at every stage of the supply chain.
     </p>
   </div>
 
@@ -95,7 +96,7 @@ const team = [
     <div class="about-section-label">The Team</div>
     <p class="about-team-intro">A small team with deep conviction about what the fabric industry needs.</p>
     <div class="team-grid">
-      {team.map((member) => (
+      {team.filter(t=>t.visible !== false).map((member) => (
         <div class="team-card">
           <div class="team-avatar">
             {member.avatar
