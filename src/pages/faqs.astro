@@ -1,0 +1,12 @@
+---
+import "../styles/faq.css";
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import DisplayList from "../layouts/DisplayList.astro";
+import { FAQ_LIST } from "../utils/messages";
+---
+
+<Layout title='Frequently Asked Questions' description=''>
+  <Nav />
+  <DisplayList list={FAQ_LIST} />
+</Layout>

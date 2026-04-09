@@ -1,0 +1,14 @@
+---
+import type { Question } from "../models";
+
+const { item } = Astro.props;
+
+interface Props {
+  item: Question;
+}
+---
+
+<details>
+  <summary>{item.question ?? "default question"}</summary>
+  <p class='font-regular'>{item.answer ?? "default answer"}</p>
+</details>

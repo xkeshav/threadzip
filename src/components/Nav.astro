@@ -1,54 +1,71 @@
 ---
+
 ---
+
 <nav>
-  <a href="/" class="nav-logo">
-    <img
-      id="navIcon"
-      src="/images/icon-circle.svg"
-      alt=""
-      class="nav-icon"
-      width="34"
-      height="34"
-      aria-hidden="true"
-    />
-    <span class="nav-logo-text">
-      <span class="logo-thread">Thread</span><span class="logo-zip">zip</span>
+  <a href='/' class='nav-logo'>
+    <img id='navIcon' src='/images/icon-circle.svg' alt='' class='nav-icon' width='34' height='34' aria-hidden='true' />
+    <span class='nav-logo-text'>
+      <span class='logo-thread'>Thread</span><span class='logo-zip'>zip</span>
     </span>
   </a>
-  <ul class="nav-links">
-    <li><a href="#ecosystem">Ecosystem</a></li>
-    <li><a href="#marketplace">Marketplace</a></li>
-    <li><a href="#ai-suite">AI Suite</a></li>
-    <li><a href="#lab">Lab</a></li>
-    <li><a href="/blog">Blog</a></li>
+  <ul class='nav-links'>
+    <li><a href='#ecosystem'>Ecosystem</a></li>
+    <li><a href='#marketplace'>Marketplace</a></li>
+    <li><a href='#ai-suite'>AI Suite</a></li>
+    <li><a href='#lab'>Lab</a></li>
+    <li><a href='/blog'>Blog</a></li>
+    <li><a href='/faqs'>FAQs</a></li>
   </ul>
-  <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+  <div class='nav-right'>
+    <button class='theme-toggle' id='themeToggle' aria-label='Toggle theme'>
+      <svg
+        class='icon-sun'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='1.5'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+      >
+        <circle cx='12' cy='12' r='5'></circle><line x1='12' y1='1' x2='12' y2='3'></line><line
+          x1='12'
+          y1='21'
+          x2='12'
+          y2='23'></line>
+        <line x1='4.22' y1='4.22' x2='5.64' y2='5.64'></line><line x1='18.36' y1='18.36' x2='19.78' y2='19.78'></line>
+        <line x1='1' y1='12' x2='3' y2='12'></line><line x1='21' y1='12' x2='23' y2='12'></line>
+        <line x1='4.22' y1='19.78' x2='5.64' y2='18.36'></line><line x1='18.36' y1='5.64' x2='19.78' y2='4.22'></line>
       </svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      <svg
+        class='icon-moon'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='1.5'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+      >
+        <path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'></path>
       </svg>
     </button>
-    <a href="https://app.threadzip.com" class="nav-cta">Get Access →</a>
+    <a href='https://app.threadzip.com' class='nav-cta'>Get Access →</a>
   </div>
 </nav>
 
 <style>
   nav {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
     height: 60px;
-    background: rgba(14,12,10,0.85);
+    background: rgba(14, 12, 10, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 0.5px solid var(--border);
     transition: background 0.3s;
@@ -106,8 +123,12 @@
   }
 
   /* light theme */
-  :global([data-theme="light"]) .logo-thread { color: oklch(18% 0.012 60); }
-  :global([data-theme="light"]) .logo-zip    { color: oklch(52% 0.15 55); }
+  :global([data-theme="light"]) .logo-thread {
+    color: oklch(18% 0.012 60);
+  }
+  :global([data-theme="light"]) .logo-zip {
+    color: oklch(52% 0.15 55);
+  }
 
   .nav-links {
     display: flex;
@@ -125,7 +146,9 @@
     transition: color 0.2s;
   }
 
-  .nav-links a:hover { color: var(--surface); }
+  .nav-links a:hover {
+    color: var(--surface);
+  }
 
   .nav-right {
     display: flex;
@@ -134,7 +157,8 @@
   }
 
   .theme-toggle {
-    width: 34px; height: 34px;
+    width: 34px;
+    height: 34px;
     background: transparent;
     border: 0.5px solid var(--border-strong);
     border-radius: var(--radius);
@@ -142,14 +166,28 @@
     display: grid;
     place-items: center;
     color: var(--muted);
-    transition: color 0.2s, border-color 0.2s;
+    transition:
+      color 0.2s,
+      border-color 0.2s;
   }
-  .theme-toggle:hover { color: var(--surface); border-color: var(--amber); }
-  .theme-toggle svg { width: 16px; height: 16px; }
+  .theme-toggle:hover {
+    color: var(--surface);
+    border-color: var(--amber);
+  }
+  .theme-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
 
-  .icon-moon { display: none; }
-  :global([data-theme="light"]) .icon-sun { display: none; }
-  :global([data-theme="light"]) .icon-moon { display: block; }
+  .icon-moon {
+    display: none;
+  }
+  :global([data-theme="light"]) .icon-sun {
+    display: none;
+  }
+  :global([data-theme="light"]) .icon-moon {
+    display: block;
+  }
 
   .nav-cta {
     font-family: var(--font-display);
@@ -162,14 +200,23 @@
     border-radius: var(--radius);
     cursor: pointer;
     text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
+    transition:
+      background 0.2s,
+      transform 0.15s;
     letter-spacing: 0.01em;
   }
-  .nav-cta:hover { background: var(--amber-light); transform: translateY(-1px); }
+  .nav-cta:hover {
+    background: var(--amber-light);
+    transform: translateY(-1px);
+  }
 
   @media (max-width: 900px) {
-    nav { padding: 0 20px; }
-    .nav-links { display: none; }
+    nav {
+      padding: 0 20px;
+    }
+    .nav-links {
+      display: none;
+    }
   }
 </style>
 
@@ -179,7 +226,7 @@
   const icon = document.getElementById("navIcon") as HTMLImageElement | null;
 
   const ICONS: Record<string, string> = {
-    dark:  "/images/icon-circle.svg",
+    dark: "/images/icon-circle.svg",
     light: "/images/icon-circle-light.svg",
   };
 

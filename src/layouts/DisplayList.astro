@@ -1,0 +1,22 @@
+---
+import type { Question } from "../models";
+import QuestionSet from "../components/QuestionSet.astro";
+
+interface Props {
+  list: Question[];
+}
+
+const { list } = Astro.props;
+---
+
+<section>
+  <h2>Frequently Asked Questions</h2>
+
+  {
+    list.map(item => (
+      <article>
+        <QuestionSet item={item} />
+      </article>
+    ))
+  }
+</section>
